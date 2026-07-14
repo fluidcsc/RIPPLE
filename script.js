@@ -1,12 +1,31 @@
 // Mobile nav
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
+const dropdownToggle = document.getElementById('navDropdownToggle');
+const dropdown = document.querySelector('.nav-dropdown');
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
     navLinks.classList.toggle('active');
+    if (dropdown) {
+      dropdown.classList.remove('open');
+    }
   });
 }
+
+if (dropdownToggle && dropdown) {
+  dropdownToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+}
+
+document.addEventListener('click', (event) => {
+  if (dropdown && !dropdown.contains(event.target)) {
+    dropdown.classList.remove('open');
+  }
+});
 
 // FAQ accordion
 const faqItems = document.querySelectorAll('.faq-item');

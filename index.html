@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIPPLE Café – Home</title>
+  <title>Ripple Café – Home</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Recoleta:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,75 +11,222 @@
 
   <nav class="navbar">
     <div class="container nav-inner">
-      <div class="logo">RIPPLE</div>
+      <div class="logo">Ripple</div>
       <button class="menu-toggle" id="menuToggle">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#menu">Menu</a></li>
-      </ul>
+      <div class="nav-links" id="navLinks">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" id="navDropdownToggle" type="button" aria-label="Open navigation menu">Menu</button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="#hero">Home</a>
+            <a href="#story">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#community">Community</a>
+            <a href="#membership">Membership</a>
+            <a href="#visit">Visit</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
   <main>
 
     <section id="hero" class="hero">
-      <div class="container">
-        <h1>Slow Coffee. Warm Community.</h1>
-        <p>A cosy, inclusive café in Edinburgh.</p>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Mindful coffee, warm welcome</p>
+          <h1>Brewing connection, one Ripple at a time.</h1>
+          <p>Begin mindful. Stay playful. Leave connected.</p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="cta-btn">Explore the menu</a>
+            <a href="#story" class="text-link">Learn our story</a>
+          </div>
+        </div>
+
+        <div class="hero-panels">
+          <div class="hero-panel">
+            <h3>What Ripple Is</h3>
+            <p>A calm café space for coffee, creativity, and queer joy.</p>
+          </div>
+
+          <div class="hero-panel">
+            <h3>Our Coffee</h3>
+            <p>Thoughtfully brewed, warmly served, and made for connection.</p>
+          </div>
+
+          <div class="hero-panel">
+            <h3>Creative Space</h3>
+            <p>Craft tables, workshops, community nights, and gentle gathering.</p>
+          </div>
+
+          <div class="hero-panel">
+            <h3>Visit Us</h3>
+            <p>Open daily with accessible spaces and a welcoming atmosphere.</p>
+          </div>
+
+          <div class="hero-cta">
+            <p>Come be part of the Ripple.</p>
+            <a href="#visit" class="cta-btn">Visit us</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="story" class="section story-section ripple-bg">
       <div class="container">
-        <h2>Our Story</h2>
-        <p>
-          RIPPLE began with a simple intention: to create a calm, welcoming space 
-          where people could slow down, connect, and enjoy coffee crafted with care.
-        </p>
-        <p>
-          Inspired by the gentle movement of water, RIPPLE is designed to feel soft, 
-          warm, and grounding — a place where every detail encourages you to breathe 
-          a little deeper.
-        </p>
-        <p>
-          Since opening in Edinburgh, we’ve grown into a community hub for remote 
-          workers, creatives, friends, and families. Every cup we serve reflects our 
-          values: thoughtful sourcing, artisan preparation, and genuine hospitality.
-        </p>
+        <h2>About Us</h2>
+
+        <div class="about-block">
+          <p class="about-intro">
+            A café built for creativity, community, and queer joy.
+          </p>
+
+          <p>
+            Ripple began with a simple idea: coffee tastes better when people feel welcome,
+            seen, and free to play.
+          </p>
+
+          <div class="about-values">
+            <h3>Our values</h3>
+            <ul>
+              <li>Mindfulness</li>
+              <li>Playfulness</li>
+              <li>Connection</li>
+              <li>Queer Joy</li>
+              <li>Craft &amp; Care</li>
+            </ul>
+          </div>
+
+          <p class="about-ethos">
+            Begin mindful. Stay playful. Leave connected.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="menu" class="section menu-section">
       <div class="container">
-        <h2>Menu Highlights</h2>
+        <h2>Menu</h2>
 
         <div class="menu-grid">
           <div class="menu-item">
-            <h3>Espresso Drinks</h3>
-            <p>Flat White, Cappuccino, Latte, Americano</p>
-            <span class="price">From £2.80</span>
+            <h3>Mindful Mornings</h3>
+            <p>Slow brews, warm pastries, and calm starts.</p>
           </div>
 
           <div class="menu-item">
-            <h3>Botanical & Tea</h3>
-            <p>Loose leaf teas, tisanes, seasonal infusions</p>
-            <span class="price">From £2.50</span>
+            <h3>Ripple Classics</h3>
+            <p>Flat whites, lattes, cappuccinos, and all-time favourites.</p>
           </div>
 
           <div class="menu-item">
-            <h3>Cold Drinks</h3>
-            <p>Cold brew, iced lattes, spritzes, house sodas</p>
-            <span class="price">From £3.20</span>
+            <h3>Playful Pours</h3>
+            <p>Seasonal specials, fun flavours, and bright house drinks.</p>
           </div>
 
           <div class="menu-item">
-            <h3>Bakes & Pastries</h3>
-            <p>Rotating pastries, cakes, vegan options</p>
-            <span class="price">From £2.80</span>
+            <h3>Slay Snacks</h3>
+            <p>Sweet treats, savoury bites, and shareable comfort food.</p>
           </div>
+
+          <div class="menu-item">
+            <h3>Craft &amp; Create</h3>
+            <p>Workshop-inspired drinks, handmade touches, and creative pairings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="section community-section ripple-bg">
+      <div class="container">
+        <div class="section-hero">
+          <div class="section-hero-copy">
+            <p class="eyebrow">Community</p>
+            <h2>Where creativity and care gather.</h2>
+            <p>Ripple is a place for workshops, queer programming, community evenings, and the kind of connection that grows slowly and stays.</p>
+          </div>
+
+          <div class="section-hero-panel">
+            <h3>Join the circle</h3>
+            <p>Come to a workshop, join the conversation, or become part of the Ripple community.</p>
+            <a href="#membership" class="cta-btn">Become a member</a>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Workshops</h3>
+            <p>Hands-on sessions for coffee lovers, makers, and curious minds.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Events</h3>
+            <p>Community gatherings, social nights, and intimate pop-ups throughout the year.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Pride programming</h3>
+            <p>Creative events and celebrations rooted in queer joy and belonging.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Membership</h3>
+            <p>Support the space and get closer to the rhythm of Ripple.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Discord</h3>
+            <p>Stay connected with the community, updates, and insider invites.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Creative labs</h3>
+            <p>Open studio-style sessions for making, sharing, and experimenting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="membership" class="section membership-section">
+      <div class="container">
+        <div class="section-hero section-hero-alt">
+          <div class="section-hero-copy">
+            <p class="eyebrow">Membership</p>
+            <h2>Make Your Ripple.</h2>
+            <p>Choose the level that feels right for you. Every tier brings you closer to the community, the perks, and the feeling of belonging.</p>
+          </div>
+
+          <div class="section-hero-panel">
+            <h3>Three tiers</h3>
+            <p>From community access to deeper member experiences, the journey is designed to feel simple and welcoming.</p>
+            <a href="#contact" class="cta-btn">Join the membership</a>
+          </div>
+        </div>
+
+        <div class="tier-grid">
+          <div class="tier-card">
+            <h3>Tier 1</h3>
+            <p>Community access, member updates, and priority event invitations.</p>
+          </div>
+
+          <div class="tier-card">
+            <h3>Tier 2</h3>
+            <p>Everything in Tier 1, plus perks for regular visits and workshops.</p>
+          </div>
+
+          <div class="tier-card">
+            <h3>Tier 3</h3>
+            <p>Premium access, member-only experiences, and deeper community connection.</p>
+          </div>
+        </div>
+
+        <div class="membership-faq">
+          <h3>FAQ</h3>
+          <p>Questions about membership, perks, and sign-up will be shared here in a simple, friendly format.</p>
         </div>
       </div>
     </section>
@@ -198,28 +345,34 @@
       </div>
     </section>
 
-    <section id="location" class="section location-section ripple-bg">
+    <section id="visit" class="section visit-section ripple-bg">
       <div class="container">
-        <h2>Find Us</h2>
-
-        <div class="location-grid">
-
-          <div class="location-info">
-            <h3>RIPPLE Speciality Coffee</h3>
-            <p>21 Albert Street<br>Edinburgh, EH7 5LH</p>
-
-            <p><strong>Opening Hours</strong><br>
-            Monday – Sunday: 9am – 6pm</p>
-
-            <p><strong>Contact</strong><br>
-            <a href="mailto:admin@mortice.uk">admin@mortice.uk</a><br>
-            <a href="tel:+44345678910">0131 234 5678</a></p>
+        <div class="section-hero">
+          <div class="section-hero-copy">
+            <p class="eyebrow">Visit Us</p>
+            <h2>Come for coffee, stay for connection.</h2>
+            <p>We’re here for slow mornings, creative afternoons, and evenings that feel warm, calm, and welcoming.</p>
           </div>
 
-          <div class="location-map">
+          <div class="section-hero-panel">
+            <h3>Plan your visit</h3>
+            <p>Find the address, opening hours, and everything you need to know before you arrive.</p>
+          </div>
+        </div>
+
+        <div class="visit-details">
+          <div class="visit-info info-card">
+            <h3>Ripple Speciality Coffee</h3>
+            <p><strong>Location</strong><br>21 Albert Street, Edinburgh.</p>
+            <p><strong>Hours</strong><br>Open daily from 9am to 6pm.</p>
+            <p><strong>Accessibility</strong><br>Thoughtfully considered access, calm spaces, and welcoming service.</p>
+            <p><strong>What to expect</strong><br>Soft lighting, warm coffee, friendly faces, and a space that invites you to stay awhile.</p>
+            <p><strong>Contact</strong><br>Email us or drop by for bookings, questions, and community enquiries.</p>
+          </div>
+
+          <div class="visit-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.2468891006124!2d-3.1768509999999996!3d55.962424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887b80ac82b8ea3%3A0xca3be8b5b31823a0!2s21%20Albert%20St%2C%20Edinburgh%20EH7%205LH!5e0!3m2!1sen!2suk!4v1783648897698!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
-
         </div>
       </div>
     </section>
@@ -228,7 +381,7 @@
       <div class="container">
         <h2>Contact Us</h2>
 
-        <form class="contact-form">
+        <form class="contact-form" action="mailto:admin@mortice.uk" method="post" enctype="text/plain">
 
           <div class="form-group">
             <label for="name">Name</label>
@@ -257,15 +410,15 @@
     <div class="container footer-inner">
 
       <div class="footer-brand">
-        <h3>RIPPLE</h3>
+        <h3>Ripple</h3>
         <p>Slow Coffee. Warm Community.</p>
       </div>
 
       <div class="footer-links">
-        <a href="#story">Our Story</a>
+        <a href="#story">About Us</a>
         <a href="#menu">Menu</a>
         <a href="#events">Events</a>
-        <a href="#location">Find Us</a>
+        <a href="#visit">Visit Us</a>
       </div>
 
       <div class="footer-social">
@@ -277,7 +430,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 RIPPLE Speciality Coffee. All rights reserved.</p>
+      <p>&copy; 2026 Ripple Speciality Coffee. All rights reserved.</p>
     </div>
   </footer>
 
