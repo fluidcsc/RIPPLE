@@ -25,6 +25,7 @@ h1, h2, h3 {
 .navbar {
   position: sticky;
   top: 0;
+  width: 100%;
   background: #F7F3EC;
   padding: 12px 0;
   border-bottom: 2px solid #6A2E6F; /* Plum accent */
@@ -32,6 +33,10 @@ h1, h2, h3 {
 }
 
 .nav-inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,23 +162,10 @@ h1, h2, h3 {
   height: 2px;
   background: #4A3A32;
   display: block;
-  margin: 3px 0;
-  border-radius: 2px;
-}
-.menu-toggle span {
-  width: 22px;
-  height: 2px;
-  background: #4A3A32;
-  display: block;
   border-radius: 2px;
   transition: all 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
   transform-origin: center;
 }
- 
-.menu-toggle span
-.menu-toggle.open span:nth-child(1)
-.menu-toggle.open span:nth-child(2)
-.menu-toggle.open span:nth-child(3)
 
 .nav-dropdown-toggle span {
   width: 18px;
