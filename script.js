@@ -19,6 +19,8 @@ if (dropdownToggle && dropdown) {
   dropdownToggle.addEventListener('click', (event) => {
     event.stopPropagation();
     dropdown.classList.toggle('open');
+    dropdownToggle.classList.toggle('open');
+
   });
 }
 

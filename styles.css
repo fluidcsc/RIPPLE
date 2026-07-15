@@ -115,6 +115,32 @@ h1, h2, h3 {
   display: flex;
 }
 
+/* Desktop hamburger lines */
+.nav-dropdown-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #4A3A32;
+  display: block;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.nav-dropdown-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  background: #C86A4A;
+}
+
+.nav-dropdown-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-dropdown-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  background: #C86A4A;
+}
+
 /* ===== MOBILE NAV ===== */
 .menu-toggle {
   display: none;
@@ -148,6 +174,29 @@ h1, h2, h3 {
 .menu-toggle.open span:nth-child(1)
 .menu-toggle.open span:nth-child(2)
 .menu-toggle.open span:nth-child(3)
+
+.nav-dropdown-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #4A3A32;
+  display: block;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.nav-dropdown-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-dropdown-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-dropdown-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 /* Soft glow on hover */
 .menu-toggle:hover span {
