@@ -8,6 +8,7 @@ if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', (event) => {
     event.stopPropagation();
     navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('open');
     if (dropdown) {
       dropdown.classList.remove('open');
     }
@@ -26,6 +27,13 @@ document.addEventListener('click', (event) => {
     dropdown.classList.remove('open');
   }
 });
+
+document.addEventListener('click', (event) => {
+  if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+    navLinks.classList.remove('active');
+  }
+});
+
 
 // FAQ accordion
 const faqItems = document.querySelectorAll('.faq-item');

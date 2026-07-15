@@ -28,12 +28,15 @@ h1, h2, h3 {
   background: #F7F3EC;
   padding: 12px 0;
   border-bottom: 2px solid #6A2E6F; /* Plum accent */
+  z-index: 9999;
 }
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 9999;
 }
 
 .logo {
@@ -120,12 +123,79 @@ h1, h2, h3 {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 10000;
 }
 
 .menu-toggle span {
   width: 22px;
   height: 2px;
   background: #4A3A32;
+  display: block;
+  margin: 3px 0;
+  border-radius: 2px;
+}
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #4A3A32;
+  display: block;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transform-origin: center;
+}
+ 
+.menu-toggle span
+.menu-toggle.open span:nth-child(1)
+.menu-toggle.open span:nth-child(2)
+.menu-toggle.open span:nth-child(3)
+
+/* Soft glow on hover */
+.menu-toggle:hover span {
+  background: #D9A441; /* Toasted Gold */
+  box-shadow: 0 0 6px rgba(217, 164, 65, 0.6);
+}
+
+/* Whimsical wiggle */
+.menu-toggle:hover span:nth-child(2) {
+  transform: translateX(3px);
+}
+
+/* Cute bounce on tap */
+.menu-toggle:active span {
+  transform: scale(1.1);
+}
+
+/* Ripple pulse when opening */
+.menu-toggle.open {
+  animation: ripplePulse 0.45s ease-out;
+}
+
+@keyframes ripplePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Morph into X */
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: #C86A4A; /* Terracotta */
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: #C86A4A;
+}
+
+/* Water-like wave motion */
+.menu-toggle.open span:nth-child(1),
+.menu-toggle.open span:nth-child(3) {
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1); 
 }
 
 /* ===== HERO ===== */
