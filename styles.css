@@ -47,8 +47,13 @@ h1, h2, h3 {
 .logo {
   font-family: "Recoleta", serif;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #4A3A32;
+  text-decoration: none;
+}
+.logo:hover {
+  color: #D9A441;
+  text-shadow: 0 0 8px rgba(217,164,65,0.7);
 }
 
 .nav-links {
@@ -1197,7 +1202,7 @@ button:hover,
     text-align: center;
     gap: 2rem;
   }
-  
+
 .footer-links-row {
     flex-wrap: wrap;
     gap: 1rem 1.4rem;
