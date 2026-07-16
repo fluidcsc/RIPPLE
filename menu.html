@@ -69,34 +69,133 @@
         </div>
       </div>
     </section>
+    
  <!-- Footer -->
     <footer class="footer">
-    <div class="container footer-inner">
+<div class="footer-inner">
 
-      <div class="footer-brand">
-        <h3>Ripple</h3>
-        <p>Brew. Play. Create. Slay — Together.</p>
-      </div>
+  <div class="footer-brand">
+    <h3>Ripple</h3>
+    <p>Brew. Play. Create. Slay — Together.</p>
+  </div>
 
-      <div class="footer-links">
-        <a href="index.html#story">About Us</a>
-        <a href="menu.html">Menu</a>
-        <a href="index.html#events">Events</a>
-        <a href="visit.html">Visit Us</a>
-      </div>
+  <div class="footer-links-row">
+    <a href="story.html">About Us</a>
+    <a href="menu.html">Menu</a>
+    <a href="community.html">Events</a>
+    <a href="visit.html">Visit Us</a>
+    <a href="https://instagram.com" target="_blank">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://tiktok.com" target="_blank">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M16 2c.6 2.2 2.1 3.8 4 4v3c-1.7-.1-3.3-.7-4.7-1.7v7.4a6.3 6.3 0 1 1-6.3-6.3c.5 0 1 .1 1.5.2v3.2a3.1 3.1 0 1 0 3.1 3.1V2h2.4z"/>
+      </svg>
+      TikTok
+    </a>
+    <a id="smartEmailLink" href="mailto:admin@mortice.uk">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 5 8-5H4zm16 2.2l-8 5-8-5V18h16V8.2z"/>
+      </svg>
+      Email
+    </a>
+  </div>
 
-      <div class="footer-social">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">Instagram</a>
-        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">TikTok</a>
-        <a href="mailto:admin@mortice.uk" aria-label="Email">Email</a>
-      </div>
-
-    </div>
+</div>
 
     <div class="footer-bottom">
       <p>&copy; 2026 Ripple Speciality Coffee. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+  const emailLink = document.getElementById('smartEmailLink');
+  const email = "admin@mortice.uk";
+
+  // Detect browser + platform
+  const ua = navigator.userAgent.toLowerCase();
+  const isChrome = ua.includes("chrome") && !ua.includes("edg");
+  const isSafari = ua.includes("safari") && !ua.includes("chrome");
+  const isFirefox = ua.includes("firefox");
+  const isIOS = /iphone|ipad|ipod/.test(ua);
+  const isAndroid = ua.includes("android");
+
+  // Detect common webmail usage
+  const isGmailUser = localStorage.getItem("gmailUser") === "true";
+  const isOutlookUser = localStorage.getItem("outlookUser") === "true";
+  const isYahooUser = localStorage.getItem("yahooUser") === "true";
+  const isProtonUser = localStorage.getItem("protonUser") === "true";
+
+  // If user visits Gmail, Outlook, Yahoo, ProtonMail, remember it
+  const host = window.location.host;
+  if (host.includes("mail.google.com")) localStorage.setItem("gmailUser", "true");
+  if (host.includes("outlook.com")) localStorage.setItem("outlookUser", "true");
+  if (host.includes("mail.yahoo.com")) localStorage.setItem("yahooUser", "true");
+  if (host.includes("proton.me")) localStorage.setItem("protonUser", "true");
+
+  // Routing logic
+  function setSmartEmailLink() {
+    // Gmail users
+    if (isGmailUser || (isChrome && navigator.registerProtocolHandler)) {
+      emailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+      emailLink.target = "_blank";
+      return;
+    }
+
+    // Outlook.com users
+    if (isOutlookUser) {
+      emailLink.href = `https://outlook.com/?path=/mail/action/compose&to=${email}`;
+      emailLink.target = "_blank";
+      return;
+    }
+
+    // Yahoo Mail users
+    if (isYahooUser) {
+      emailLink.href = `https://compose.mail.yahoo.com/?to=${email}`;
+      emailLink.target = "_blank";
+      return;
+    }
+
+    // ProtonMail users
+    if (isProtonUser) {
+      emailLink.href = `https://mail.proton.me/u/0/composer?to=${email}`;
+      emailLink.target = "_blank";
+      return;
+    }
+
+    // iOS users → Apple Mail
+    if (isIOS) {
+      emailLink.href = `mailto:${email}`;
+      return;
+    }
+
+    // Android users → Gmail app or mail app
+    if (isAndroid) {
+      emailLink.href = `mailto:${email}`;
+      return;
+    }
+
+    // Desktop Safari → Apple Mail
+    if (isSafari) {
+      emailLink.href = `mailto:${email}`;
+      return;
+    }
+
+    // Firefox → mail app
+    if (isFirefox) {
+      emailLink.href = `mailto:${email}`;
+      return;
+    }
+
+    // Default fallback
+    emailLink.href = `mailto:${email}`;
+  }
+
+  setSmartEmailLink();
+</script>
 
   <script src="script.js"></script>
 
