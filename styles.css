@@ -972,6 +972,51 @@ button:hover,
 }
 
 /* ===========================
+   MEMBERSHIP CTA
+   =========================== */
+
+.membership-cta {
+  width: 100%;
+  background: #E9E0D2; /* Soft Cream */
+  padding: 1px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.membership-cta h2 {
+  font-family: "Recoleta", serif;
+  font-size: 2rem;
+  color: #276230; /* Dark Green */
+  margin-bottom: 1rem;
+}
+
+.membership-cta p {
+  font-size: 1.1rem;
+  color: #6A2E6F; 
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.1;
+}
+
+.membership-cta .cta-btn {
+  display: inline-block;
+  background: #C86A4A; /* Terracotta */
+  color: #E9E0D2;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-cta .cta-btn:hover {
+  background: #D9A441; /* Gold */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ===========================
    FOOTER BASE
    =========================== */
 
