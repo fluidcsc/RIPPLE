@@ -3,7 +3,8 @@ fetch("navbar.html")
   .then(data => {
     document.getElementById("navbar-container").innerHTML = data;
 
-    if (window.initNavbar) {
-      window.initNavbar();
-    }
+    // Load script.js AFTER navbar is inserted
+    const script = document.createElement("script");
+    script.src = "script.js";
+    document.body.appendChild(script);
   });

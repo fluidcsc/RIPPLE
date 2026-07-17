@@ -7,7 +7,7 @@ function initNavbar() {
   const menu = document.querySelector('#nav-menu');
 
   if (!toggle || !menu) {
-    console.warn("Navbar not found yet — waiting for load.");
+    console.warn("Navbar elements not found.");
     return;
   }
 
@@ -28,7 +28,6 @@ function initNavbar() {
 }
 
 window.initNavbar = initNavbar;
-
 
 // =========================
 // FAQ ACCORDION
