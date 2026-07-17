@@ -28,7 +28,7 @@ h1, h2, h3 {
   width: 100%;
   background: #E9E0D2;
   padding: 12px 0;
-  border-bottom: 2px solid #6A2E6F; /* Plum accent */
+  border-bottom: 2px solid #4e3e76; /* Plum accent */
   z-index: 9999;
 }
 
@@ -87,7 +87,7 @@ h1, h2, h3 {
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
   background: #E9E0D2;
-  border: 1px solid rgba(88, 55, 89, 0.16);
+  border: 1px solid rgba(78, 62, 118, 0.16);
   color: #276230;
 }
 
@@ -108,7 +108,7 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 0.6rem;
   background: #E9E0D2;
-  border: 1px solid rgba(88, 55, 89, 0.16);
+  border: 1px solid rgba(78, 62, 118, 0.16);
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
   min-width: 140px;
@@ -223,7 +223,7 @@ h1, h2, h3 {
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #6A2E6F, #C86A4A); /* Plum â†’ Terracotta */
+  background: linear-gradient(135deg, #4e3e76, #C86A4A); /* Plum â†’ Terracotta */
   color: #E9E0D2;
   padding: 88px 0 96px;
   position: relative;
@@ -369,13 +369,13 @@ h1, h2, h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #6A2E6F;
+  color: #4e3e76;
 }
 
 .about-values {
   margin: 1.4rem 0;
   background: rgba(255, 249, 242, 0.7);
-  border: 1px solid rgba(88, 55, 89, 0.2);
+  border: 1px solid rgba(78, 62, 118, 0.2);
   border-radius: 12px;
   padding: 1rem 1.2rem;
   text-align: center;
@@ -383,7 +383,7 @@ h1, h2, h3 {
 
 .about-values h3 {
   font-family: "Recoleta", serif;
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.7rem;
 }
 
@@ -416,7 +416,7 @@ h1, h2, h3 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: #6A2E6F; /* Plum accent */
+  color: #4e3e76; /* Plum accent */
 }
 
 .section p {
@@ -462,7 +462,7 @@ button:hover,
     gap: 0.8rem;
     padding: 12px;
     border-radius: 8px;
-    border: 2px solid #6A2E6F;
+    border: 2px solid #4e3e76;
   }
 
   .nav-links.active {
@@ -478,7 +478,7 @@ button:hover,
     display: none;
     margin-top: 0.4rem;
     background: rgba(255, 249, 242, 0.8);
-    border: 1px solid rgba(88, 55, 89, 0.14);
+    border: 1px solid rgba(78, 62, 118, 0.14);
     box-shadow: none;
   }
 
@@ -625,7 +625,7 @@ button:hover,
 }
 
 .section-hero-panel h3 {
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.4rem;
 }
 
@@ -664,7 +664,7 @@ button:hover,
 
 .info-card h3 {
   font-family: "Recoleta", serif;
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.45rem;
 }
 
@@ -697,7 +697,7 @@ button:hover,
 
 .tier-card h3 {
   font-family: "Recoleta", serif;
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.45rem;
 }
 
@@ -715,7 +715,7 @@ button:hover,
 
 .membership-faq h3 {
   font-family: "Recoleta", serif;
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.5rem;
 }
 
@@ -748,7 +748,7 @@ button:hover,
 
 .visit-info h3 {
   font-family: "Recoleta", serif;
-  color: #6A2E6F;
+  color: #4e3e76;
   margin-bottom: 0.6rem;
   text-align: center;
 }
@@ -788,7 +788,7 @@ button:hover,
 .gallery-item {
   border-radius: 12px;
   overflow: hidden;
-  background: #6A2E6F; /* Plum */
+  background: #4e3e76; /* Plum */
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
@@ -826,7 +826,7 @@ button:hover,
 
 .event-card {
   background: #E9E0D2;
-  border-left: 6px solid #6A2E6F; /* Plum accent */
+  border-left: 6px solid #4e3e76; /* Plum accent */
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -865,7 +865,7 @@ button:hover,
 }
 
 .faq-item {
-  border: 2px solid #6A2E6F; /* Plum */
+  border: 2px solid #4e3e76; /* Plum */
   border-radius: 10px;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -931,7 +931,7 @@ button:hover,
 
 .location-info {
   background: #E9E0D2;
-  border-left: 6px solid #6A2E6F; /* Plum */
+  border-left: 6px solid #4e3e76; /* Plum */
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -992,7 +992,7 @@ button:hover,
 
 .membership-cta p {
   font-size: 1.1rem;
-  color: #6A2E6F; 
+  color: #4e3e76; 
   max-width: 650px;
   margin: 0 auto 1.5rem;
   line-height: 1.1;
@@ -1021,7 +1021,7 @@ button:hover,
    =========================== */
 
 .footer {
-  background: #6A2E6F; /* Plum */
+  background: #4e3e76; /* Plum */
   color: #E9E0D2;      /* Soft Cream */
   padding: 50px 0 20px;
   margin-top: 60px;
@@ -1189,7 +1189,7 @@ button:hover,
 .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #6A2E6F; /* Plum */
+  border: 2px solid #4e3e76; /* Plum */
   border-radius: 8px;
   background: #E9E0D2;
   color: #4A3A32;
@@ -1200,4 +1200,5 @@ button:hover,
 .form-group textarea:focus {
   border-color: #D9A441; /* Gold */
 }
+
 
