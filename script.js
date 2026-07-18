@@ -1,7 +1,6 @@
 // =========================
-// NAVIGATION TOGGLE (SAFE LOAD)
+// NAVIGATION TOGGLE
 // =========================
-
 function initNavbar() {
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('#nav-menu');
@@ -29,10 +28,39 @@ function initNavbar() {
 
 window.initNavbar = initNavbar;
 
+
+// =========================
+// NAVBAR VISIBILITY + TRANSLUCENCY
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) return;
+
+  navbar.classList.add("visible");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+
+  navbar.addEventListener("mouseenter", () => {
+    navbar.classList.remove("scrolled");
+  });
+
+  navbar.addEventListener("mouseleave", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    }
+  });
+});
+
+
 // =========================
 // FAQ ACCORDION
 // =========================
-
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -48,23 +76,10 @@ function initFaqAccordion() {
 
 window.initFaqAccordion = initFaqAccordion;
 
-let pageInteractionsInitialized = false;
-
-function initPageInteractions() {
-  if (pageInteractionsInitialized) return;
-
-  pageInteractionsInitialized = true;
-  initNavbar();
-  initFaqAccordion();
-  setSmartEmailLink();
-}
-
-window.initPageInteractions = initPageInteractions;
 
 // =========================
 // SMART EMAIL LINK
 // =========================
-
 function setSmartEmailLink() {
   const emailLink = document.getElementById('smartEmailLink');
   if (!emailLink) return;
@@ -111,10 +126,4 @@ function setSmartEmailLink() {
   }
 
   emailLink.href = `mailto:${email}`;
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initPageInteractions);
-} else {
-  initPageInteractions();
 }

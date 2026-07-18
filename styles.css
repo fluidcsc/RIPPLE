@@ -24,13 +24,29 @@ h1, h2, h3 {
 /* ===== NAV BAR STRUCTURE ===== */
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #E9E0D2;
   padding: 12px 0;
+  backdrop-filter: blur(10px);
+  background: #E9E0D2;
   border-bottom: 2px solid #4e3e76;
-  z-index: 9999;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease;
+}
+
+/* Fade-in on load */
+.navbar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* More translucent when scrolling */
+.navbar.scrolled {
+  background: #74b77e;
 }
 
 .nav-inner {
