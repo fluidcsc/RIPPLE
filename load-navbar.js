@@ -3,6 +3,7 @@ fetch("navbar.html")
     console.log("Navbar fetch status:", response.status);
     if (!response.ok) {
       console.error("Failed to load navbar.html");
+      throw new Error("Failed to load navbar.html");
     }
     return response.text();
   })
@@ -19,20 +20,26 @@ fetch("navbar.html")
     const script = document.createElement("script");
     script.src = "script.js";
     script.onload = () => {
-      console.log("script.js loaded");
       if (typeof window.initNavbar === "function") {
-        console.log("Running initNavbar()");
         window.initNavbar();
       }
+
+      const navbar = document.querySelector(".navbar");
+      if (navbar) {
+        navbar.classList.add("visible");
+      }
+
       if (typeof window.initFaqAccordion === "function") {
         console.log("Running initFaqAccordion()");
         window.initFaqAccordion();
       }
+
       if (typeof window.setSmartEmailLink === "function") {
         console.log("Running setSmartEmailLink()");
         window.setSmartEmailLink();
       }
     };
+
     document.body.appendChild(script);
   })
   .catch(err => console.error("Error loading navbar:", err));

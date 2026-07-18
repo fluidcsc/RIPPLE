@@ -29,9 +29,11 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   padding: 12px 0;
-  backdrop-filter: blur(10px);
-  background: #E9E0D2;
-  border-bottom: 2px solid #4e3e76;
+  background: rgba(233, 224, 210, 0.18); /* soft cream tint at 22% opacity */
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(233, 224, 210, 0.35); /* cream accent */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   z-index: 999;
   opacity: 0;
   transform: translateY(-10px);
@@ -43,10 +45,12 @@ h1, h2, h3 {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* More translucent when scrolling */
 .navbar.scrolled {
-  background: #74b77e;
+  background: rgba(233, 224, 210, 0.12); /* lighter cream tint */
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom-color: rgba(233, 224, 210, 0.25);
 }
 
 .nav-inner {
@@ -1003,8 +1007,8 @@ button:hover,
 .footer {
   background: #4e3e76; /* Plum */
   color: #E9E0D2;      /* Soft Cream */
-  padding: 50px 0 20px;
-  margin-top: 60px;
+  padding: 3px 0 20px;
+  margin-top: 5px;
   text-align: center;
 }
 
