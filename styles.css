@@ -522,19 +522,6 @@ button:hover,
   padding: 80px 0;
 }
 
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-items: center;
-}
-
-.menu-grid .menu-item:last-child,
-.menu-grid .menu-item:nth-last-child(2) {
-  width: min(100%, 320px);
-}
-
 .menu-item {
   background: #E9E0D2;
   border: 2px solid #C86A4A; /* Terracotta */
@@ -559,6 +546,39 @@ button:hover,
   color: #4A3A32;
   margin-bottom: 0;
   line-height: 1.6;
+}
+
+.menu-three-card {
+  background: #E9E0D2; /* Soft Cream */
+  border: 2px solid #C86A4A; /* Terracotta */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 960px;
+  margin: 2rem auto;
+}
+
+.menu-three-card h3 {
+  font-family: "Recoleta", serif;
+  color: #4A3A32; /* Espresso */
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.menu-three-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-three-card li {
+  color: #4A3A32; /* Espresso */
+  font-size: 1rem;
+  padding: 0.35rem 0;
+  text-align: center;
 }
 
 .community-section,
