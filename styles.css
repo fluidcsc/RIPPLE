@@ -1007,8 +1007,8 @@ button:hover,
 .footer {
   background: #4e3e76; /* Plum */
   color: #E9E0D2;      /* Soft Cream */
-  padding: 3px 0 20px;
-  margin-top: 5px;
+  padding: 10px 0 20px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -1016,7 +1016,7 @@ button:hover,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .footer-inner > div {
