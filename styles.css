@@ -8,8 +8,12 @@
 /* ===== BASE ===== */
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #C86A4A, #4e3e76);
-}
+  background: linear-gradient(
+    to bottom,
+    #E9E0D2 0%,
+    #5e5587 100% /* wool violet */
+  );
+}    
 
 h1, h2, h3 {
   font-family: "Recoleta", serif;
@@ -187,10 +191,8 @@ h1, h2, h3 {
    ============================ */
 
 .hero-card-section {
-  padding-top: 100px;
-  padding-bottom: 90px;
+  padding: 3rem 0;
   background: transparent;
-  position: relative;
 }
 
 .hero-card-container {
@@ -203,19 +205,14 @@ h1, h2, h3 {
   background: #E9E0D2;
   border: 2px solid #C86A4A;
   border-radius: 16px;
-  padding: 2rem 2.4rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   text-align: center;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-}
-
-.hero-card > * {
-  position: relative;
-  z-index: 1;
+  margin-top: 17px; /* moves card down */
+  padding: 20px;
 }
 
 .hero-card .eyebrow {
@@ -239,8 +236,8 @@ h1, h2, h3 {
   color: #4A3A32;
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 1120px;
-  margin: 0.6rem auto;
+  margin: 0.6rem 0; /* closer to edges */
+  max-width: none;  /* removes forced narrow text */
 }
 
 .hero-card-actions {
@@ -1017,7 +1014,7 @@ button:hover,
    =========================== */
 
 .footer {
-  background: #4e3e76; /* Plum */
+  background: transparent;
   color: #E9E0D2;      /* Soft Cream */
   padding: 10px 0 20px;
   margin-top: 10px;
