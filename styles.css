@@ -16,7 +16,7 @@ h1, h2, h3 {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -517,14 +517,30 @@ button:hover,
   }
 }
 
+/* ============================
+   MENU HERO SECTION
+   ============================ */
 .menu-section {
-  background: #E9E0D2; /* Soft Cream */
-  padding: 80px 0;
+  min-height: calc(100vh - 90px); /* subtract navbar height */
+  padding-top: 45px;              /* same spacing as community */
+  padding-bottom: 5px;            /* footer sits close */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E9E0D2;
+}
+
+/* Make the menu card adapt like the community card */
+.menu-card {
+  max-height: 90vh;     /* fits inside screen */
+  overflow-y: auto;     /* scroll inside if needed */
+  padding: 1.5rem;      /* tighter spacing */
+  gap: 1.5rem;          /* consistent spacing */
 }
 
 .menu-item {
   background: #E9E0D2;
-  border: 2px solid #C86A4A; /* Terracotta */
+  border: 2px solid #C86A4A;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -533,7 +549,7 @@ button:hover,
 
 .menu-item:hover {
   transform: translateY(-6px);
-  border-color: #D9A441; /* Toasted Gold hover */
+  border-color: #D9A441;
 }
 
 .menu-item h3 {
@@ -547,23 +563,30 @@ button:hover,
   margin-bottom: 0;
   line-height: 1.6;
 }
-
+/* ============================
+   THREE-CARD GRID
+   ============================ */
 .menu-three-card {
-  background: #E9E0D2; /* Soft Cream */
-  border: 2px solid #C86A4A; /* Terracotta */
+  background: #E9E0D2;
+  border: 2px solid #C86A4A;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.3rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 960px;
+  gap: 1.1rem;
+  max-width: 1120px;
   margin: 2rem auto;
+}
+
+.menu-section .container {
+  max-width: 980px;   /* allows the card to widen */
+  width: 100%;
 }
 
 .menu-three-card h3 {
   font-family: "Recoleta", serif;
-  color: #4A3A32; /* Espresso */
+  color: #4A3A32;
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -575,19 +598,114 @@ button:hover,
 }
 
 .menu-three-card li {
-  color: #4A3A32; /* Espresso */
+  color: #4A3A32;
   font-size: 1rem;
   padding: 0.35rem 0;
   text-align: center;
 }
 
-.community-section,
-.membership-section,
-.visit-section {
-  background: #E9E0D2;
-  padding: 90px 0;
+.menu-three-card .menu-col {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 1rem;
 }
 
+.menu-three-card .menu-col:hover {
+  transform: translateY(-6px);
+  border-color: #D9A441;
+}
+
+.menu-eyebrow {
+  grid-column: 1 / -1;        /* full width across all columns */
+  text-align: center;
+  font-family: "Recoleta", serif;
+  font-size: 2rem;
+  color: #4e3e76;             /* Deep Violet */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ============================
+   COMMUNITY HERO SECTION
+   ============================ */
+.community-section {
+  min-height: calc(100vh - 90px); /* subtract navbar height */
+  padding-top: 45px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;      /* center vertically */
+  justify-content: center;  /* center horizontally */
+  background: #E9E0D2;
+}
+
+/* Card adapts to viewport */
+.community-card {
+  max-height: 90vh;         /* fits inside screen */
+  overflow-y: auto;         /* scroll inside if needed */
+  padding: 1.5rem;          /* tighter spacing */
+  gap: 1.5rem;              /* tighter grid gap */
+}
+
+.community-section .container {
+  max-width: 980px;   /* allows the card to widen */
+  width: 100%;
+}
+
+/* Header inside the card */
+.community-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Eyebrow — Toasted Gold */
+.community-header .eyebrow {
+  font-family: "Recoleta", serif;
+  font-size: 1.6rem;
+  color: #D9A441;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Main heading — Deep Violet */
+.community-header h2 {
+  font-family: "Recoleta", serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: #4e3e76;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Intro paragraph — Espresso */
+.community-header p {
+  color: #4A3A32;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive grid */
+@media (max-width: 900px) {
+  .community-card {
+    grid-template-columns: 1fr 1fr;
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .community-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================
+   HERO SECTIONS (unchanged)
+   ============================ */
 .section-hero {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
