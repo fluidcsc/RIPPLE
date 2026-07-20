@@ -423,7 +423,12 @@ button:hover,
    SHARED MENU TEXT STYLES
    ============================ */
 
-.menu-three-card h3,
+.menu-three-card h3 {
+  color: #4e3e76;
+  text-align: center;
+  line-height: 1.6;
+}
+
 .menu-three-card li {
   color: #4A3A32;
   text-align: center;
@@ -550,7 +555,6 @@ button:hover,
     grid-template-columns: 1fr;
   }
 }
-
 
 /* ============================
    Membership HERO SECTION
@@ -745,9 +749,31 @@ button:hover,
    FAQ SECTION
    =========================== */
 
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-section,
+.contact-section {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .faq-section {
-  background: transparent; /* Soft Cream */
+  background: transparent; 
   padding: 80px 0;
+  color: #4e3e76;
+  text-align: center;
 }
 
 .faq-container {
@@ -756,7 +782,7 @@ button:hover,
 }
 
 .faq-item {
-  border: 2px solid #4e3e76; /* Plum */
+  border: 2px solid #4e3e76; 
   border-radius: 10px;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -770,7 +796,7 @@ button:hover,
   padding: 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #4A3A32; /* Espresso */
+  color: #4A3A32;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -779,11 +805,11 @@ button:hover,
 }
 
 .faq-question:hover {
-  color: #D9A441; /* Gold hover */
+  color: #D9A441;
 }
 
 .faq-icon {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -809,61 +835,59 @@ button:hover,
 }
 
 /* ===========================
-   LOCATION SECTION
+   CONTACT PAGE
    =========================== */
-
-.location-section {
-  background: #E9E0D2; /* Soft Cream */
+.contact-section {
+  background: transparent;
   padding: 80px 0;
 }
 
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  margin-top: 2rem;
-}
-
-.location-info {
-  background: #E9E0D2;
-  border-left: 6px solid #4e3e76; /* Plum */
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-.location-info h3 {
+.contact-section h2 {
   font-family: "Recoleta", serif;
-  color: #4A3A32;
-  margin-bottom: 0.75rem;
+  color:#4e3e76;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
 }
 
-.location-info p {
-  color: #4A3A32;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.location-info a {
-  color: #C86A4A; /* Terracotta */
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.location-info a:hover {
-  color: #D9A441; /* Gold hover */
-}
-
-.location-map iframe {
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #E9E0D2;
+  padding: 2rem;
   border-radius: 12px;
+  border: 2px solid #C86A4A;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .location-grid {
-    grid-template-columns: 1fr;
-  }
+.contact-form:hover {
+  transform: translateY(-6px);
+  border-color: #D9A441;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color:#4A3A32;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #4e3e76;
+  border-radius: 8px;
+  background: #E9E0D2;
+  color: #4A3A32;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #D9A441; /* Gold */
 }
 
 /* ===========================
@@ -1001,54 +1025,6 @@ button:hover,
     padding: 40px 0 20px;
   }
 }
-}
-/* ===========================
-   CONTACT PAGE
-   =========================== */
-.contact-section {
-  background: #E9E0D2;
-  padding: 80px 0;
-}
-
-.contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #E9E0D2;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 2px solid #C86A4A;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.contact-form:hover {
-  transform: translateY(-6px);
-  border-color: #D9A441;
-}
-
-.form-group {
-  margin-bottom: 1.2rem;
-}
-
-.form-group label {
-  font-weight: 600;
-  color: #4A3A32;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #4e3e76; /* Plum */
-  border-radius: 8px;
-  background: #E9E0D2;
-  color: #4A3A32;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #D9A441; /* Gold */
 }
 
 
