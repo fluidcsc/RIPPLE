@@ -407,6 +407,27 @@ button:hover,
     font-size: 1.05rem;
   }
 
+  .section {
+    padding: 40px 0;
+  }
+
+  .events-card {
+    padding: 1rem;
+  }
+
+  .events-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .event-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .event-item p {
+    font-size: 0.95rem;
+  }
+
   .menu-three-card {
     grid-template-columns: 1fr;
     padding: 1rem;
@@ -417,18 +438,70 @@ button:hover,
     padding: 0.8rem;
   }
 
+  .community-section,
+  .membership-section,
+  .menu-section,
+  .visit-section,
+  .faq-section,
+  .contact-section {
+    padding-top: 72px;
+    padding-bottom: 24px;
+  }
+
+  .community-header h2,
+  .faq-section h2,
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
   .membership-grid,
   .visit-grid,
   .info-grid {
     grid-template-columns: 1fr;
   }
 
+  .visit-section {
+    padding: 72px 0 24px;
+  }
+
+  .visit-grid {
+    gap: 1rem;
+  }
+
+  .visit-info {
+    padding: 1rem;
+    text-align: center;
+  }
+
   .visit-info h3 {
     font-size: 1.5rem;
   }
 
+  .visit-info p {
+    font-size: 0.95rem;
+  }
+
+  .visit-map iframe {
+    min-height: 260px;
+    height: 280px;
+  }
+
+  .faq-question {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .faq-answer p {
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+
   .contact-form {
     padding: 1.25rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
   }
 }
 
