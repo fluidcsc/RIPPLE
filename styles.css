@@ -187,7 +187,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   HERO CARD SECTION (NEW)
+   HERO CARD SECTION (about us)
    ============================ */
 
 .hero-card-section {
@@ -332,7 +332,6 @@ button:hover,
 /* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
-
   .menu-toggle {
     display: flex;
   }
@@ -379,25 +378,57 @@ button:hover,
 
   .section-hero-copy h2 {
     text-align: center;
+    font-size: 1.5rem;
   }
 
   .section-hero-copy p {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-size: 0.95rem;
+  }
+
+  .section-hero-copy .cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
   }
 
   .visit-details {
     grid-template-columns: 1fr;
   }
 
-  /* NEW HERO CARD MOBILE RULES */
   .hero-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
+    margin-top: 10px;
   }
 
   .hero-card p {
     font-size: 1.05rem;
+  }
+
+  .menu-three-card {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .menu-three-card .menu-col {
+    padding: 0.8rem;
+  }
+
+  .membership-grid,
+  .visit-grid,
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
   }
 }
 
@@ -479,6 +510,18 @@ button:hover,
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .menu-three-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-three-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================
@@ -696,21 +739,48 @@ button:hover,
    VISIT DETAILS SECTION
    ============================ */
 
-.visit-details {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  align-items: stretch;
+.visit-section {
+  padding: 90px 0 40px;   /* top padding to clear navbar */
+  min-height: calc(100vh - 90px); /* ensures full-page height */
+  background: transparent;
+  display: flex;
+  justify-content: center;
 }
 
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Left column */
+.visit-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Right column */
+.visit-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Visit info card (now matches membership cards) */
 .visit-info {
-  background: linear-gradient(135deg, #E9E0D2 0%, #E9E0D2 100%);
+  background: #E9E0D2;
   border: 2px solid #C86A4A;
   border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  text-align: left;
+  font-size: 1rem;
 }
 
 .visit-info:hover {
@@ -722,6 +792,7 @@ button:hover,
   font-family: "Recoleta", serif;
   color: #4e3e76;
   margin-bottom: 0.6rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -731,18 +802,20 @@ button:hover,
   margin-bottom: 0.9rem;
 }
 
-.visit-info a {
-  color: #C86A4A;
-  text-decoration: none;
-  font-weight: 600;
-}
-
+/* Map styling */
 .visit-map iframe {
   width: 100%;
   min-height: 320px;
   border-radius: 12px;
   border: 0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Responsive stacking */
+@media (max-width: 900px) {
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===========================
@@ -1020,11 +1093,9 @@ button:hover,
     gap: 1rem 1.4rem;
   }
 
-  @media (max-width: 768px) {
   .footer {
     padding: 40px 0 20px;
   }
-}
 }
 
 
