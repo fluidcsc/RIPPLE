@@ -11,23 +11,24 @@
 
 <div id="navbar-container"></div>
 
-<section class="faq-contact-section">
-  <div class="info-grid">
+<section class="page-section faq-section">
+  <div class="container">
 
-  <div class="faq-section">  
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
+    <div class="one-col-grid">
+
+      <div class="ripple-copy">
+        <h2 class="ripple-heading">Frequently Asked Questions</h2>
       </div>
 
-    <div class="faq-container">
+      <div class="faq-container">
 
           <div class="faq-item">
             <button class="faq-question">
               Are you LGBTQIA+ and Neurodiverse friendly?
               <span class="faq-icon">+</span>
-            </button>
+          </button>
             <div class="faq-answer">
-              <p>Yes, we are Queer and Neurodiverse led and are committed to creating an inclusive environment for all members of our community. We have a gender-neutral toilet and a quiet space for neurodiverse individuals if needed.</p>
+              <p class="ripple-text">Yes, we are Queer and Neurodiverse led and are committed to creating an inclusive environment for all members of our community. We have a gender-neutral toilet and a quiet space for neurodiverse individuals if needed.</p>
             </div>
           </div>
 
@@ -37,7 +38,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes, we have a wheelchair accessible entrance and toilet. If you have any specific accessibility needs, please get in touch to let us know how we can assist you.</p>
+              <p class="ripple-text">Yes, we have a wheelchair accessible entrance and toilet. If you have any specific accessibility needs, please get in touch to let us know how we can assist you.</p>
             </div>
           </div>  
 
@@ -47,7 +48,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes, ONLY on the condition that either child and/or pet are well-behaved. Otherwise, they are not welcome.</p>
+              <p class="ripple-text">Yes, ONLY on the condition that either child and/or pet are well-behaved. Otherwise, they are not welcome.</p>
             </div>
           </div>
 
@@ -57,7 +58,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes, we offer vegan, vegetarian, and NGCI options. If you have any specific dietary requirements, please let us know!</p>
+              <p class="ripple-text">Yes, we offer vegan, vegetarian, and NGCI options. If you have any specific dietary requirements, please let us know!</p>
             </div>
           </div>
 
@@ -67,7 +68,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes — free Wi-Fi is available throughout the café.</p>
+              <p class="ripple-text">Yes — free Wi-Fi is available throughout the café.</p>
             </div>
           </div>
 
@@ -77,7 +78,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes, we offer a variety of teas, hot chocolate, and juices.</p>
+              <p class="ripple-text">Yes, we offer a variety of teas, hot chocolate, and juices.</p>
             </div>
           </div>
 
@@ -87,7 +88,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>The Ripple Society Club is our community membership — a way to connect, create, and belong.</p>
+              <p class="ripple-text">The Ripple Society Club is our community membership — a way to connect, create, and belong.</p>
             </div>
           </div>
 
@@ -97,7 +98,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>There are three membership tiers — free, £8, £15. Yes, you can upgrade tiers or cancel anytime — no fees.</p>
+              <p class="ripple-text">There are three membership tiers — free, £8, £15. Yes, you can upgrade tiers or cancel anytime — no fees.</p>
             </div>
           </div>
 
@@ -107,7 +108,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Show your membership QR code or loyalty card at the counter. Unfortunately the perks do not roll over — they reset monthly.</p>
+              <p class="ripple-text">Show your membership QR code or loyalty card at the counter. Unfortunately the perks do not roll over — they reset monthly.</p>
             </div>
           </div>
 
@@ -117,37 +118,55 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Your discount is automatically applied when booking with your membership profile.</p>
+              <p class="ripple-text">Your discount is automatically applied when booking with your membership profile.</p>
             </div>
           </div>
 
+      </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+<section class="page-section contact-section">
+  <div class="container">
+
+    <div class="one-col-grid">
+
+      <!-- Contact Heading -->
+      <div class="ripple-copy">
+        <h2 class="ripple-heading">Contact Us</h2>
+        <p class="ripple-text">We’d love to hear from you — collaborations, bookings, questions, or community ideas.</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="ripple-card contact-form" 
+            action="mailto:admin@mortice.uk" 
+            method="post" 
+            enctype="text/plain">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
         </div>
-      </div>
 
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+        </div>
 
-    <div class="contact-section">
-      <h2>Contact Us</h2>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
 
-        <form class="contact-form" action="mailto:admin@mortice.uk" method="post" enctype="text/plain">
+        <button class="ripple-btn">Send Message</button>
 
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" type="text" required>
-          </div>
+      </form>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" rows="5" required></textarea>
-          </div>
-
-          <button class="cta-btn">Send Message</button>
-        </form>
-      </div>
+    </div>
 
   </div>
 </section>

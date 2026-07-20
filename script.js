@@ -1,87 +1,68 @@
 // =========================
-// NAVIGATION TOGGLE
+// NAVIGATION TOGGLE (Unified)
 // =========================
-function initNavbar() {
-  const toggle = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('#nav-menu');
+window.initNavbar = function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.getElementById("nav-links");
+  const navbar = document.querySelector(".navbar");
 
-  if (!toggle || !menu) {
+  if (!toggle || !links || !navbar) {
     console.warn("Navbar elements not found.");
     return;
   }
 
-  function toggleMenu() {
-    const isOpen = toggle.classList.toggle('open');
-    menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
-  }
-
-  toggle.addEventListener('click', toggleMenu);
-
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleMenu();
-    }
+  // Toggle mobile menu
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.classList.toggle("open");
+    links.classList.toggle("active");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
-}
 
-window.initNavbar = initNavbar;
-
-
-// =========================
-// NAVBAR VISIBILITY + TRANSLUCENCY
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
-  if (!navbar) return;
-
-  navbar.classList.add("visible");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
+  // Scroll blur / scrolled state
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
     }
-  });
+  };
 
-  navbar.addEventListener("mouseenter", () => {
-    navbar.classList.remove("scrolled");
-  });
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // run once on load
+};
 
-  navbar.addEventListener("mouseleave", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    }
-  });
+
+// =========================
+// NAVBAR VISIBILITY (Fade-in)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  if (navbar) navbar.classList.add("visible");
 });
 
 
 // =========================
 // FAQ ACCORDION
 // =========================
-function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
+window.initFaqAccordion = function () {
+  const faqItems = document.querySelectorAll(".faq-item");
 
   faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
+    const question = item.querySelector(".faq-question");
     if (!question) return;
 
-    question.addEventListener('click', () => {
-      item.classList.toggle('active');
+    question.addEventListener("click", () => {
+      item.classList.toggle("active");
     });
   });
-}
-
-window.initFaqAccordion = initFaqAccordion;
+};
 
 
 // =========================
 // SMART EMAIL LINK
 // =========================
-function setSmartEmailLink() {
-  const emailLink = document.getElementById('smartEmailLink');
+window.setSmartEmailLink = function () {
+  const emailLink = document.getElementById("smartEmailLink");
   if (!emailLink) return;
 
   const email = "admin@mortice.uk";
@@ -126,4 +107,4 @@ function setSmartEmailLink() {
   }
 
   emailLink.href = `mailto:${email}`;
-}
+};
