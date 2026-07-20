@@ -402,49 +402,31 @@ button:hover,
 }
 
 /* ============================
-   MENU HERO SECTION
+   MENU SECTION WRAPPER
    ============================ */
 
 .menu-section {
   min-height: calc(100vh - 90px);
-  padding-top: 45px;
-  padding-bottom: 5px;
+  padding: 45px 0 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #E9E0D2;
+  background: transparent;
 }
 
-.menu-card {
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 1.5rem;
-  gap: 1.5rem;
+.menu-section .container {
+  max-width: 980px;
+  width: 100%;
 }
 
-.menu-item {
-  background: #E9E0D2;
-  border: 2px solid #C86A4A;
-  border-radius: 12px;
-  padding: 1.5rem;
+/* ============================
+   SHARED MENU TEXT STYLES
+   ============================ */
+
+.menu-three-card h3,
+.menu-three-card li {
+  color: #4A3A32;
   text-align: center;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-6px);
-  border-color: #D9A441;
-}
-
-.menu-item h3 {
-  font-family: "Recoleta", serif;
-  color: #4A3A32;
-  margin-bottom: 0.5rem;
-}
-
-.menu-item p {
-  color: #4A3A32;
-  margin-bottom: 0;
   line-height: 1.6;
 }
 
@@ -465,36 +447,17 @@ button:hover,
   margin: 2rem auto;
 }
 
-.menu-section .container {
-  max-width: 980px;
-  width: 100%;
-}
-
-.menu-three-card h3 {
-  font-family: "Recoleta", serif;
-  color: #4A3A32;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
 .menu-three-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu-three-card li {
-  color: #4A3A32;
-  font-size: 1rem;
-  padding: 0.35rem 0;
-  text-align: center;
-}
-
 .menu-three-card .menu-col {
-  transition: transform 0.3s ease, border-color 0.3s ease;
   border: 2px solid transparent;
   border-radius: 12px;
   padding: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .menu-three-card .menu-col:hover {
@@ -523,7 +486,7 @@ button:hover,
   display: flex;
   align-items: center;      /* center vertically */
   justify-content: center;  /* center horizontally */
-  background: #E9E0D2;
+  background: transparent;
 }
 
 /* Card adapts to viewport */
@@ -590,14 +553,54 @@ button:hover,
 
 
 /* ============================
-   HERO SECTIONS (unchanged)
+   Membership HERO SECTION
    ============================ */
-.section-hero {
+.membership-section {
+  padding: 90px 0 5px; /* top padding to account for navbar */
+  min-height: calc(100vh - 90px); /* subtract navbar height */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.membership-section .container {
+  max-width: 980px;   /* matches your menu card centering */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Two-column layout */
+.membership-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  align-items: stretch;
-  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.membership-left {
+  display: flex; 
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.membership-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.membership-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+  .section-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-hero-copy {
@@ -605,102 +608,67 @@ button:hover,
   border-radius: 0;
   padding: 0 0 0.4rem;
   border: none;
-}
 
-.section-hero-copy h2 {
-  text-align: left;
-  margin-bottom: 0.7rem;
-  font-size: clamp(1.7rem, 2.4vw, 2.3rem);
-}
-
-.section-hero-copy p {
-  text-align: left;
-  max-width: 620px;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.section-hero-panel {
-  background: linear-gradient(135deg, #E9E0D2 0%, #E9E0D2 100%);
-  border: 2px solid #C86A4A;
-  border-radius: 14px;
-  padding: 1.2rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
+  align-items: center;   /* centers the CTA button */
   justify-content: center;
 }
 
-.section-hero-panel h3 {
-  color: #4e3e76;
-  margin-bottom: 0.4rem;
+.section-hero-copy h2 {
+  font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+  margin-bottom: 0.5rem;
+  color: #276230;
+  text-align: center;
 }
 
-.section-hero-panel p {
+.section-hero-copy p {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.65;
   color: #4A3A32;
-  margin-bottom: 0.8rem;
-  text-align: left;
+  text-align: center;
 }
 
-.section-hero-alt {
-  grid-template-columns: 1fr 1fr;
+.section-hero-copy .cta-btn {
+  display: inline-block;
+  margin: 1.2rem auto 0;  
+  background: #C86A4A;
+  color: #E9E0D2;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-top: 1rem;
+.section-hero-copy .cta-btn:hover {
+  background: #D9A441;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-.info-card {
-  background: #E9E0D2;
-  border: 2px solid #C86A4A;
-  border-radius: 12px;
-  padding: 1.1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  position: relative;
-  overflow: hidden;
+/* Responsive: stack columns on mobile */
+@media (max-width: 900px) {
+  .membership-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.info-card:hover {
-  transform: translateY(-6px);
-  border-color: #D9A441;
-}
-
-.info-card h3 {
-  font-family: "Recoleta", serif;
-  color: #4e3e76;
-  margin-bottom: 0.45rem;
-}
-
-.info-card p {
-  color: #4A3A32;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.tier-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
+/* ============================
+   TIER CARDS (One Column)
+   ============================ */
 
 .tier-card {
-  background: linear-gradient(135deg, #E9E0D2 0%, #E9E0D2 100%);
-  border: 2px solid #C86A4A;
+  background: #E9E0D2;            /* Cream */
+  border: 2px solid #C86A4A;      /* Terracotta */
   border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.tier-card:hover {
-  transform: translateY(-6px);
-  border-color: #D9A441;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-bottom: 1.5rem;            /* consistent spacing */
 }
 
 .tier-card h3 {
@@ -711,26 +679,18 @@ button:hover,
 
 .tier-card p {
   color: #4A3A32;
-  line-height: 1.6;
+  line-height: 1.4;
   margin: 0;
 }
 
-.membership-faq {
-  max-width: 720px;
-  margin: 1.8rem auto 0;
-  text-align: center;
+.tier-card:hover {
+  transform: translateY(-6px);
+  border-color: #D9A441;
 }
 
-.membership-faq h3 {
-  font-family: "Recoleta", serif;
-  color: #4e3e76;
-  margin-bottom: 0.5rem;
-}
-
-.membership-faq p {
-  color: #4A3A32;
-  line-height: 1.7;
-}
+/* ============================
+   VISIT DETAILS SECTION
+   ============================ */
 
 .visit-details {
   display: grid;
@@ -781,89 +741,12 @@ button:hover,
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.gallery-section {
-  background: #E9E0D2; /* Soft Cream */
-  padding: 80px 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.gallery-item {
-  border-radius: 12px;
-  overflow: hidden;
-  background: #4e3e76; /* Plum */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: translateY(-6px);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-item p {
-  color: #E9E0D2; /* Soft Cream */
-  text-align: center;
-  padding: 0.75rem;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.events-section {
-  background: #E9E0D2; /* Soft Cream */
-  padding: 80px 0;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.event-card {
-  background: #E9E0D2;
-  border-left: 6px solid #4e3e76; /* Plum accent */
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.event-card:hover {
-  transform: translateY(-6px);
-  border-color: #D9A441; /* Gold hover */
-}
-
-.event-card h3 {
-  font-family: "Recoleta", serif;
-  color: #4A3A32;
-  margin-bottom: 0.5rem;
-}
-
-.event-card p {
-  color: #4A3A32;
-  line-height: 1.6;
-}
-
-.events-cta {
-  text-align: center;
-  margin-top: 2.5rem;
-}
+/* ===========================
+   FAQ SECTION
+   =========================== */
 
 .faq-section {
-  background: #E9E0D2; /* Soft Cream */
+  background: transparent; /* Soft Cream */
   padding: 80px 0;
 }
 
@@ -925,6 +808,10 @@ button:hover,
   transform: rotate(45deg);
 }
 
+/* ===========================
+   LOCATION SECTION
+   =========================== */
+
 .location-section {
   background: #E9E0D2; /* Soft Cream */
   padding: 80px 0;
@@ -977,51 +864,6 @@ button:hover,
   .location-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* ===========================
-   MEMBERSHIP CTA
-   =========================== */
-
-.membership-cta {
-  width: 100%;
-  background: #E9E0D2; /* Soft Cream */
-  padding: 1px 0;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.membership-cta h2 {
-  font-family: "Recoleta", serif;
-  font-size: 2rem;
-  color: #276230; /* Dark Green */
-  margin-bottom: 1rem;
-}
-
-.membership-cta p {
-  font-size: 1.1rem;
-  color: #4e3e76; 
-  max-width: 650px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.1;
-}
-
-.membership-cta .cta-btn {
-  display: inline-block;
-  background: #C86A4A; /* Terracotta */
-  color: #E9E0D2;
-  padding: 14px 32px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.membership-cta .cta-btn:hover {
-  background: #D9A441; /* Gold */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 /* ===========================
