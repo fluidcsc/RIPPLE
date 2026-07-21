@@ -67,9 +67,14 @@ h1, h2, h3 {
 /* Unified brand */
 .nav-brand {
   font-family: "Recoleta", serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem; /* restore larger brand */
   color: #4e3e76;
   text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-brand:hover {
+  transform: translateY(-2px);
 }
 
 /* Unified desktop links */
@@ -80,14 +85,15 @@ h1, h2, h3 {
 }
 
 .nav-links a {
-  color: #4A3A32;
-  text-decoration: none;
+  color: #276230;
+  font-size: 1rem; /* restore bigger text */
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #C86A4A;
+  transform: translateY(-2px); /* restore lift animation */
 }
 
 /* ============================
@@ -158,7 +164,7 @@ h1, h2, h3 {
 
 /* ===== PAGE SECTION WRAPPER ===== */
 .page-section {
-  padding: 90px 0 40px;
+  padding: 62px 0 40px;
   min-height: calc(100vh - 90px);
   display: flex;
   justify-content: center;
@@ -166,15 +172,6 @@ h1, h2, h3 {
 }
 
 /* ===== GRID SYSTEM ===== */
-.two-col-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 980px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .one-col-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -189,10 +186,13 @@ h1, h2, h3 {
   background: #E9E0D2;
   border: 2px solid #C86A4A;
   border-radius: 12px;
-  padding: 1.5rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  max-width: 860px;      /* narrower */
+  margin: 0 auto;        /* centered */
+  padding: 2rem 2rem;  /* taller */
 }
+
 .ripple-card:hover {
   transform: translateY(-6px);
   border-color: #D9A441;
@@ -202,11 +202,27 @@ h1, h2, h3 {
 .ripple-heading {
   font-family: "Recoleta", serif;
   color: #4e3e76;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem; /* adjust as you like */
 }
 
 .ripple-text {
   color: #4A3A32;
   line-height: 1.6;
+}
+
+.ripple-text strong {
+  color: #4e3e76; 
+  font-weight: 700; 
+}
+
+.eyebrow {
+  color: #D9A441;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 1.6rem;
 }
 
 /* ===== COPY BLOCK ===== */
@@ -245,42 +261,61 @@ h1, h2, h3 {
 }
 
 .about-cta {
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; 
 }
 
 /* ===== EVENT SECTION ===== */
 .events-card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+  padding: 1.8rem;
 }
 
 .events-body {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  text-align: center;
+  align-items: center;
 }
 
 .event-item h3 {
-  margin-bottom: 0.4rem;
-}
-
-.events-cta {
-  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 /* ============================
-   MENU SECTION
+   THREE-COLUMN GRID (Menu + Community)
    ============================ */
-.menu-three-card {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.community-header {
+  margin-bottom: 2.5rem;
 }
 
-/* ============================
-   MENU + COMMUNITY COLUMN STYLES (Unified)
-   ============================ */
+.menu-header {
+  margin-bottom: 1.5rem;
+}
+
+.menu-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.2rem 3.5rem;
+}
+
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+/* Column styles (shared) */
+.menu-col {
+  text-align: center;
+}
+
 .menu-col h3 {
   margin-bottom: 0.5rem;
 }
@@ -291,42 +326,52 @@ h1, h2, h3 {
 }
 
 .menu-col ul li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-col ul li:hover {
+  color: #D9A441;
+  text-shadow: 0 0 6px rgba(217,164,65,0.7);
+  transform: translateY(-2px);
 }
 
 /* Mobile */
 @media (max-width: 900px) {
-  .menu-three-card {
+  .three-col-grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
-/* ============================
-   COMMUNITY SECTION
-   ============================ */
-/* Community card layout */
-.community-card {
+/*Membership*/
+.membership-intro {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.2rem;
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .community-card {
-    gap: 1.5rem;
-  }
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem 4.5rem;
 }
 
 /* ============================
    VISIT SECTION
    ============================ */
+.visit-card {
+  text-align: center;
+}
+
 .visit-info h3 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .visit-info p {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.2rem;
 }
 
 .visit-map iframe {
@@ -422,13 +467,24 @@ h1, h2, h3 {
   border-color: #D9A441;
 }
 
+.form-cta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem; 
+  border-color: transparent;
+}
+
+.form-cta .ripple-btn {
+  border: none;
+}
+
 /* ===========================
    FOOTER BASE
    =========================== */
 .footer {
-  background: transparent; /* gradient shows through */
-  color: #E9E0D2; /* cream text */
-  border-top: 2px solid #4e3e76;
+  background: transparent;
+  color: #E9E0D2; 
   padding: 2rem 0;
   margin-top: 4rem;
   text-align: center;
@@ -467,6 +523,10 @@ h1, h2, h3 {
 .footer-brand p {
   font-size: 1rem;
   opacity: 0.9;
+}
+
+.footer-tagline {
+  color: #fdf7ec;
 }
 
 /* ===========================
