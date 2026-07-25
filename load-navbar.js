@@ -13,16 +13,14 @@ fetch("navbar.html")
     // Inject navbar HTML
     navbarContainer.innerHTML = html;
 
-    // Run navbar init if available
+    // Run navbar init AFTER injection
     if (typeof window.initNavbar === "function") {
       window.initNavbar();
     }
 
-    // Fade-in animation
+    // Fade-in AFTER injection
     const navbar = document.querySelector(".navbar");
-    if (navbar) {
-      navbar.classList.add("visible");
-    }
+    if (navbar) navbar.classList.add("visible");
 
     // Optional helpers
     if (typeof window.initFaqAccordion === "function") {
