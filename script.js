@@ -81,6 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
+// IMAGE FADE-IN (decoupled from scroll reveal so a slow-loading
+// photo fades in on its own instead of popping in instantly)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  document.querySelectorAll("img").forEach(img => {
+    if (img.complete && img.naturalWidth > 0) return;
+
+    img.classList.add("img-fade");
+    img.addEventListener("load", () => {
+      img.classList.add("img-loaded");
+    }, { once: true });
+  });
+});
+
+
+// =========================
 // FAQ ACCORDION
 // =========================
 window.initFaqAccordion = function () {
