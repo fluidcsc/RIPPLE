@@ -5,14 +5,17 @@
   box-sizing: border-box;
 }
 
+
 /* ===== BASE ===== */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Fraunces", serif;
+  font-weight: 400;
   background: linear-gradient(to bottom, #E9E0D2 0%, #5e5587 100% /* wool violet */);
 }    
 
 h1, h2, h3 {
-  font-family: "Recoleta", serif;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
 }
 
 .container {
@@ -75,7 +78,8 @@ h1, h2, h3 {
   left: 50%;
   transform: translateX(-50%);
   transform-origin: center center;
-  font-family: "Recoleta", serif;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
   font-size: 2.5rem;
   color: #276230;
   text-decoration: none;
@@ -346,7 +350,8 @@ h1, h2, h3 {
 
 /* ===== TYPOGRAPHY ===== */
 .ripple-heading {
-  font-family: "Recoleta", serif;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
   color: #4e3e76;
   text-align: center;
   font-size: 1.6rem;
@@ -400,6 +405,31 @@ h1, h2, h3 {
 /* ============================
    INDEX (about us)
    ============================ */
+/* ===== FRAUNCES UTILITIES ===== */
+/* Generic utility using CSS vars so you can set weight/axes per-element */
+.fraunces {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: var(--fraunces-weight, 400);
+  font-style: normal;
+  font-variation-settings: "SOFT" var(--fraunces-softness, 50), "WONK" var(--fraunces-wonk, 1);
+}
+
+/* Example preconfigured variants (change values as you like) */
+.fraunces-regular {
+  --fraunces-weight: 400;
+  --fraunces-softness: 50;
+  --fraunces-wonk: 1;
+  font-family: "Fraunces", serif;
+}
+
+.fraunces-strong {
+  --fraunces-weight: 900;
+  --fraunces-softness: 100;
+  --fraunces-wonk: 1;
+  font-family: "Fraunces", serif;
+}
+
 .about-content {
   display: flex;
   flex-direction: column;
@@ -660,7 +690,8 @@ h1, h2, h3 {
    BRAND
    =========================== */
 .footer-brand h3 {
-  font-family: "Recoleta", serif;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
   font-size: 2rem;
   margin-bottom: 0.3rem;
   text-align: center;
