@@ -657,14 +657,27 @@ a {
 
 .highlight-item {
   text-align: center;
-  padding: 1.6rem 1.2rem 0;
-  border-top: 3px solid var(--clay);
+  padding: 0 1.2rem;
+  color: var(--clay);
 }
 
-.highlight-item:nth-child(2) { border-top-color: var(--ripple); }
-.highlight-item:nth-child(3) { border-top-color: var(--ink); }
+.highlight-item:nth-child(2) { color: var(--ripple); }
+.highlight-item:nth-child(3) { color: var(--ink); }
+
+.ripple-mark {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 0.9rem;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+
+.highlight-item:hover .ripple-mark {
+  transform: scale(1.08) rotate(-4deg);
+}
 
 .highlight-item h3 {
+  color: var(--ink);
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
 }
