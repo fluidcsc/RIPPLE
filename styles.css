@@ -5,29 +5,33 @@
   box-sizing: border-box;
 }
 
-/* ===== TOKENS ===== */
+/* ===== TOKENS =====
+   Palette inspired by the Zesty template's warm cream / burnt-clay /
+   teal system, adapted for Ripple Grove. */
 :root {
   /* neutrals */
-  --ink: #2B2320;
-  --ink-soft: #5C4C3F;
-  --paper: #F6EFE1;
-  --paper-deep: #E9DEC5;
-  --card: #FBF6EA;
+  --ink: #3E2E1C;
+  --ink-deep: #241a10;
+  --ink-soft: rgba(62, 46, 28, 0.72);
+  --paper: #F3E8D8;
+  --paper-deep: #E9DFCF;
+  --card: #FBF5E9;
 
   /* brand accents */
-  --grove: #1F4D34;
-  --grove-deep: #143726;
-  --clay: #C1633C;
-  --clay-deep: #A24E2E;
-  --ripple: #3E7C8C;
-  --ripple-deep: #2C5C68;
-  --ripple-light: #BFDCE1;
+  --clay: #D1793E;
+  --clay-deep: #B15F2C;
+  --ripple: #308D87;
+  --ripple-deep: #24685F;
+  --ripple-light: #CFE8E4;
 
-  --shadow: rgba(43, 35, 32, 0.14);
-  --shadow-soft: rgba(43, 35, 32, 0.08);
+  --shadow: rgba(176, 165, 150, 0.45);
+  --shadow-soft: rgba(62, 46, 28, 0.10);
+
+  --radius-pill: 999px;
+  --tracking: 0.06em;
 
   --font-display: "Fraunces", serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ===== BASE ===== */
@@ -46,7 +50,7 @@ body {
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--grove);
+  color: var(--ink);
 }
 
 a {
@@ -68,10 +72,10 @@ a {
   left: 0;
   width: 100%;
   padding: 12px 0;
-  background: rgba(246, 239, 225, 0.6);
+  background: rgba(243, 232, 216, 0.6);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-bottom: 1px solid rgba(31, 77, 52, 0.12);
+  border-bottom: 1px solid rgba(62, 46, 28, 0.12);
   box-shadow: 0 4px 16px var(--shadow-soft);
   z-index: 999;
   opacity: 0;
@@ -85,10 +89,10 @@ a {
 }
 
 .navbar.scrolled {
-  background: rgba(246, 239, 225, 0.85);
+  background: rgba(243, 232, 216, 0.88);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom-color: rgba(31, 77, 52, 0.18);
+  border-bottom-color: rgba(62, 46, 28, 0.18);
 }
 
 /* ============================
@@ -117,10 +121,10 @@ a {
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: 0.01em;
-  color: var(--grove);
+  color: var(--ink);
   text-decoration: none;
-  transition: color 0.3s ease, opacity 0.3s ease, transform 0.25s ease, text-shadow 0.25s ease;
-  will-change: transform, text-shadow, color, opacity;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.25s ease;
+  will-change: transform, color, opacity;
   white-space: nowrap;
 }
 
@@ -174,10 +178,12 @@ a {
 .nav-links.active a:nth-child(7) { animation-delay: 0.35s; }
 
 .nav-links a {
-  color: var(--grove);
+  color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 600;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
   padding: 0.3rem 0;
   text-decoration: none;
   opacity: 1;
@@ -204,6 +210,25 @@ a {
   width: 100%;
 }
 
+/* Highlighted CTA pill inside the nav (Zesty-style nav button) */
+.nav-cta {
+  background: var(--clay);
+  color: var(--card) !important;
+  padding: 0.55rem 1.2rem !important;
+  border-radius: var(--radius-pill);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+.nav-cta:hover {
+  background: var(--clay-deep);
+  color: var(--card) !important;
+  transform: translateY(-2px);
+}
+
 @keyframes rippleSlide {
   0% { opacity: 0; transform: translateY(-10px) scale(0.98); }
   60% { opacity: 1; transform: translateY(2px) scale(1.02); }
@@ -227,25 +252,25 @@ a {
   background: none;
   cursor: pointer;
   z-index: 10000;
-  border: 1px solid rgba(31, 77, 52, 0.3);
+  border: 1px solid rgba(62, 46, 28, 0.3);
   border-radius: 8px;
   padding: 8px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-toggle:hover {
-  border-color: var(--grove);
-  box-shadow: 0 0 6px rgba(31, 77, 52, 0.25);
+  border-color: var(--ink);
+  box-shadow: 0 0 6px rgba(62, 46, 28, 0.25);
 }
 
 .nav-toggle:active {
-  border-color: var(--grove-deep);
+  border-color: var(--ink-deep);
 }
 
 .nav-toggle span {
   width: 22px;
   height: 2px;
-  background: var(--grove);
+  background: var(--ink);
   border-radius: 2px;
   transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   transform-origin: center;
@@ -305,7 +330,7 @@ a {
     position: static;
     flex-direction: row;
     align-items: center;
-    gap: 1.7rem;
+    gap: 1.6rem;
     background: none;
     border: none;
     box-shadow: none;
@@ -317,7 +342,6 @@ a {
   .nav-links a {
     opacity: 1;
     animation: none;
-    font-size: 0.9rem;
   }
 }
 
@@ -336,6 +360,18 @@ a {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-cta {
+    margin-top: 0.3rem;
+  }
+}
+
+/* Narrow phones: brand text is wide enough to collide with the toggle */
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.05rem;
+    letter-spacing: 0;
   }
 }
 
@@ -363,7 +399,7 @@ a {
   background: var(--card);
   border: 2px solid transparent;
   border-radius: 18px;
-  box-shadow: 0 6px 20px var(--shadow-soft);
+  box-shadow: 0 10px 30px var(--shadow-soft);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   max-width: 860px;
   margin: 0 auto;
@@ -373,14 +409,14 @@ a {
 .ripple-card:hover {
   transform: translateY(-6px);
   border-color: var(--clay);
-  box-shadow: 0 14px 30px var(--shadow);
+  box-shadow: 0 20px 45px var(--shadow);
 }
 
 /* ===== TYPOGRAPHY ===== */
 .ripple-heading {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--grove);
+  color: var(--ink);
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 0.8rem;
@@ -393,17 +429,17 @@ a {
 }
 
 .ripple-text strong {
-  color: var(--grove);
+  color: var(--ink);
   font-weight: 700;
 }
 
 .eyebrow {
   color: var(--ripple);
   font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 /* ===== COPY BLOCK ===== */
@@ -415,14 +451,17 @@ a {
   gap: 0.8rem;
 }
 
-/* ===== CTA BUTTON ===== */
+/* ===== CTA BUTTON (pill, uppercase — Zesty-style) ===== */
 .ripple-btn {
   background: var(--clay);
   color: var(--card);
   font-family: var(--font-body);
-  padding: 14px 32px;
-  border-radius: 10px;
+  padding: 16px 34px;
+  border-radius: var(--radius-pill);
   font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
   border: 2px solid var(--clay);
@@ -438,13 +477,13 @@ a {
 
 .ripple-btn-ghost {
   background: transparent;
-  color: var(--grove);
-  border: 2px solid var(--grove);
+  color: var(--ink);
+  border: 2px solid var(--ink);
 }
 
 .ripple-btn-ghost:hover {
-  background: var(--grove);
-  border-color: var(--grove);
+  background: var(--ink);
+  border-color: var(--ink);
   color: var(--paper);
 }
 
@@ -472,7 +511,7 @@ a {
 .hero-heading {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--grove);
+  color: var(--ink);
   font-size: clamp(2.1rem, 5vw, 3.2rem);
   line-height: 1.15;
 }
@@ -534,6 +573,70 @@ a {
 }
 
 /* ============================
+   HIGHLIGHTS STRIP (index)
+   ============================ */
+.highlights-section {
+  padding: 10px 0 20px;
+}
+
+.highlights-grid {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.highlight-item {
+  text-align: center;
+  padding: 1.6rem 1.2rem 0;
+  border-top: 3px solid var(--clay);
+}
+
+.highlight-item:nth-child(2) { border-top-color: var(--ripple); }
+.highlight-item:nth-child(3) { border-top-color: var(--ink); }
+
+.highlight-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* ============================
+   CTA BAND (index)
+   ============================ */
+.cta-section {
+  padding: 20px 0 60px;
+}
+
+.cta-band {
+  background: var(--ink);
+  border-radius: 28px;
+  padding: 3.2rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 20px 45px var(--shadow);
+}
+
+.cta-band .eyebrow {
+  color: var(--ripple-light);
+}
+
+.cta-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--paper);
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  max-width: 600px;
+  line-height: 1.25;
+}
+
+.cta-band .ripple-btn {
+  margin-top: 0.4rem;
+}
+
+/* ============================
    INDEX (about us)
    ============================ */
 .about-section {
@@ -580,7 +683,7 @@ a {
 }
 
 .event-item:nth-child(2) { border-left-color: var(--clay); }
-.event-item:nth-child(3) { border-left-color: var(--grove); }
+.event-item:nth-child(3) { border-left-color: var(--ink); }
 
 .event-item h3 {
   margin-bottom: 0.2rem;
@@ -655,7 +758,7 @@ a {
   white-space: nowrap;
   font-weight: 700;
   font-family: var(--font-body);
-  color: var(--grove);
+  color: var(--ink);
   font-size: 0.95rem;
 }
 
@@ -715,7 +818,7 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.4rem 1rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   box-shadow: 0 4px 10px var(--shadow);
   white-space: nowrap;
 }
@@ -774,7 +877,7 @@ a {
   min-height: 360px;
   border-radius: 14px;
   border: 0;
-  box-shadow: 0 8px 24px var(--shadow);
+  box-shadow: 0 20px 45px var(--shadow);
 }
 
 /* Mobile */
@@ -876,21 +979,31 @@ a {
   display: block;
   font-family: var(--font-body);
   font-weight: 600;
-  color: var(--grove);
-  margin-bottom: 0.4rem;
-  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.8rem 0.9rem;
+  padding: 0.9rem 1.2rem;
   border: 2px solid var(--paper-deep);
-  border-radius: 8px;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   transition: border-color 0.25s ease;
+}
+
+.form-group input {
+  border-radius: var(--radius-pill);
+  height: 52px;
+}
+
+.form-group textarea {
+  border-radius: 18px;
 }
 
 .form-group input:focus,
@@ -910,19 +1023,18 @@ a {
 .form-cta .ripple-btn {
   border: none;
   cursor: pointer;
-  font-size: 1rem;
 }
 
 /* ===========================
    FOOTER BASE
    =========================== */
 .footer {
-  background: var(--grove-deep);
-  color: var(--paper);
+  background: var(--paper-deep);
+  color: var(--ink);
   padding: 3rem 0 2rem;
   margin-top: 4rem;
   text-align: center;
-  border-radius: 28px 28px 0 0;
+  border-top: 1px solid rgba(62, 46, 28, 0.15);
 }
 
 .footer-inner {
@@ -936,7 +1048,7 @@ a {
 
 .footer-bottom {
   margin-top: 1.4rem;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .footer-bottom p {
@@ -954,7 +1066,7 @@ a {
   font-size: 2rem;
   margin-bottom: 0.3rem;
   text-align: center;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .footer-brand p {
@@ -966,7 +1078,7 @@ a {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--paper);
+  color: var(--ink);
   letter-spacing: 0.02em;
 }
 
@@ -981,11 +1093,13 @@ a {
 }
 
 .footer-links-row a {
-  color: var(--paper);
+  color: var(--ink);
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -998,7 +1112,7 @@ a {
 .icon {
   width: 18px;
   height: 18px;
-  fill: var(--paper);
+  fill: var(--ink);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
@@ -1006,13 +1120,13 @@ a {
    HOVER EFFECTS
    =========================== */
 .footer-links-row a:hover {
-  color: var(--ripple-light);
+  color: var(--ripple-deep);
   transform: translateY(-2px);
   position: relative;
 }
 
 .footer-links-row a:hover .icon {
-  fill: var(--ripple-light);
+  fill: var(--ripple-deep);
   transform: translateY(-2px) scale(1.15);
 }
 
@@ -1023,7 +1137,7 @@ a {
   bottom: -4px;
   width: 100%;
   height: 3px;
-  background: radial-gradient(circle, rgba(191, 220, 225, 0.6) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(48, 141, 135, 0.4) 0%, transparent 70%);
   animation: rippleWave 0.6s ease-out;
 }
 
