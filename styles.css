@@ -29,6 +29,7 @@
 
   --radius-pill: 999px;
   --tracking: 0.06em;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   --font-display: "Fraunces", serif;
   --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -61,6 +62,27 @@ a {
   max-width: 1040px;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+/* ===== SCROLL REVEAL =====
+   Applied by script.js so content is unaffected if JS fails to load. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ============================
@@ -497,6 +519,33 @@ a {
   overflow: hidden;
 }
 
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::before {
+  top: -12%;
+  left: 50%;
+  width: 640px;
+  height: 640px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(209, 121, 62, 0.22) 0%, transparent 70%);
+}
+
+.hero::after {
+  bottom: -25%;
+  left: 12%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(48, 141, 135, 0.16) 0%, transparent 70%);
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -506,6 +555,28 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 1.1rem;
+}
+
+.hero-inner > * {
+  opacity: 0;
+  animation: heroFadeUp 0.5s var(--ease) forwards;
+}
+
+.hero-inner > *:nth-child(1) { animation-delay: 0s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.24s; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-inner > * {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .hero-heading {
@@ -606,9 +677,10 @@ a {
 }
 
 .cta-band {
-  background: var(--ink);
+  position: relative;
+  background: linear-gradient(rgba(36, 26, 16, 0.82), rgba(36, 26, 16, 0.88)), url("images/latte-art.jpg") center 30% / cover no-repeat;
   border-radius: 28px;
-  padding: 3.2rem 2rem;
+  padding: 3.6rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -617,6 +689,7 @@ a {
   max-width: 900px;
   margin: 0 auto;
   box-shadow: 0 20px 45px var(--shadow);
+  overflow: hidden;
 }
 
 .cta-band .eyebrow {
@@ -634,6 +707,78 @@ a {
 
 .cta-band .ripple-btn {
   margin-top: 0.4rem;
+}
+
+/* ============================
+   SPLIT SECTION (image + copy)
+   ============================ */
+.split-section {
+  padding: 30px 0;
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.split-grid.reverse .split-image {
+  order: 2;
+}
+
+.split-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 24px 50px var(--shadow);
+}
+
+.split-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
+}
+
+.split-content .ripple-heading {
+  text-align: left;
+}
+
+@media (max-width: 860px) {
+  .split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .split-grid.reverse .split-image {
+    order: 0;
+  }
+
+  .split-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .split-content .ripple-heading {
+    text-align: center;
+  }
+}
+
+/* ============================
+   MENU BANNER IMAGE
+   ============================ */
+.menu-banner {
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 16px 36px var(--shadow);
+  margin-bottom: 2rem;
 }
 
 /* ============================
@@ -861,6 +1006,23 @@ a {
   align-items: center;
   text-align: left;
   padding: 2.4rem;
+}
+
+.visit-photo {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px var(--shadow);
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .visit-photo {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .visit-info h3 {
