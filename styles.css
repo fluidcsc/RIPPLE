@@ -621,19 +621,27 @@ a {
   width: 140px;
   height: 140px;
   margin: -70px 0 0 -70px;
-  border: 2px solid var(--clay);
-  border-radius: 50%;
+  border: 3px solid var(--clay);
+  border-radius: 47% 53% 61% 39% / 44% 51% 49% 56%;
   opacity: 0;
-  animation: rippleOut 4.8s ease-out infinite;
+  animation:
+    rippleOut 4.8s ease-out infinite,
+    rippleWobble 3.4s ease-in-out infinite;
 }
 
-.ripple-ring:nth-child(2) { animation-delay: 1.6s; }
-.ripple-ring:nth-child(3) { animation-delay: 3.2s; }
+.ripple-ring:nth-child(2) { animation-delay: 1.6s, 0.6s; }
+.ripple-ring:nth-child(3) { animation-delay: 3.2s, 1.3s; }
 
 @keyframes rippleOut {
-  0% { transform: scale(0.4); opacity: 0.5; }
-  70% { opacity: 0.12; }
-  100% { transform: scale(3.4); opacity: 0; }
+  0% { transform: scale(0.4) rotate(0deg); opacity: 0.5; border-width: 3px; filter: blur(0px); }
+  70% { opacity: 0.14; }
+  100% { transform: scale(3.4) rotate(12deg); opacity: 0; border-width: 0.5px; filter: blur(1.5px); }
+}
+
+@keyframes rippleWobble {
+  0%, 100% { border-radius: 47% 53% 61% 39% / 44% 51% 49% 56%; }
+  33% { border-radius: 58% 42% 40% 60% / 55% 38% 62% 45%; }
+  66% { border-radius: 40% 60% 55% 45% / 60% 55% 45% 40%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
