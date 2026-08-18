@@ -661,13 +661,13 @@ a {
   color: var(--clay);
 }
 
-.highlight-item:nth-child(2) { color: var(--ripple); }
+.highlight-item:nth-child(2) { color: var(--clay-deep); }
 .highlight-item:nth-child(3) { color: var(--ink); }
 
 .ripple-mark {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 0.9rem;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 0.6rem;
   display: block;
   transition: transform 0.4s var(--ease);
 }
