@@ -1,22 +1,14 @@
 // =========================
-// NAVIGATION TOGGLE (Unified)
+// NAVBAR BEHAVIOR
 // =========================
 window.initNavbar = function () {
-  const toggle = document.querySelector(".nav-toggle");
   const links = document.getElementById("nav-links");
   const navbar = document.querySelector(".navbar");
 
-  if (!toggle || !links || !navbar) {
+  if (!links || !navbar) {
     console.warn("Navbar elements not found.");
     return;
   }
-
-  // Toggle mobile menu
-  toggle.addEventListener("click", () => {
-    const isOpen = toggle.classList.toggle("open");
-    links.classList.toggle("active");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
 
   // Scroll blur / scrolled state
   const handleScroll = () => {
