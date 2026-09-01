@@ -20,7 +20,7 @@
 body {
   font-family: "Fraunces", serif;
   font-weight: 400;
-  background: linear-gradient(180deg, #F2EEF8 0%, #E9E0D2 22%, #5E5587 100%);
+  background: linear-gradient(180deg, #F7F2EC 0%, #E9E0D2 20%, #5E5587 100%);
   min-height: 100vh;
   color: var(--brown);
   line-height: 1.6;
@@ -29,17 +29,17 @@ body {
 body.index-page,
 body.membership-page,
 body.contact-page {
-  background: linear-gradient(180deg, #F3EDE3 0%, #E9E0D2 22%, #4d6f39 100%);
+  background: linear-gradient(180deg, #F4EFE9 0%, #E9E0D2 20%, #4d6f39 100%);
 }
 
 body.menu-page,
 body.visit-page {
-  background: linear-gradient(180deg, #F5EAE4 0%, #E9E0D2 22%, #B35642 100%);
+  background: linear-gradient(180deg, #F7EDE9 0%, #E9E0D2 20%, #B35642 100%);
 } 
 
 h1, h2, h3 {
-  font-family: "Fraunces", serif;
-  font-weight: 700;
+  font-family: "Lora", serif;
+  font-weight: 600;
 }
 
 .container {
@@ -102,12 +102,12 @@ h1, h2, h3 {
   left: auto;
   transform: none;
   transform-origin: left center;
-  font-family: "Fraunces", serif;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: clamp(1.52rem, 1.85vw, 2.05rem);
   color: var(--green);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.025em;
   transition: color 0.25s ease, opacity 0.25s ease, transform 0.2s ease;
   will-change: transform, color, opacity;
 }
@@ -137,6 +137,7 @@ h1, h2, h3 {
   color: var(--green);
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.015em;
   padding: 0.45rem 0.25rem;
   text-decoration: none;
   opacity: 1;
@@ -152,7 +153,7 @@ h1, h2, h3 {
 
 /* ===== PAGE SECTION WRAPPER ===== */
 .page-section {
-  padding: 116px 0 52px;
+  padding: 120px 0 58px;
   min-height: calc(100vh - 90px);
   display: flex;
   justify-content: center;
@@ -163,7 +164,7 @@ h1, h2, h3 {
 .one-col-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.2rem;
   max-width: 980px;
   width: 100%;
   margin: 0 auto;
@@ -173,12 +174,12 @@ h1, h2, h3 {
 .ripple-card {
   background: var(--cream);
   border: 2px solid var(--cream);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: 0 6px 18px var(--shadow-soft);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   max-width: 860px;
   margin: 0 auto;
-  padding: 2.1rem 1.9rem;
+  padding: 2.3rem 2.1rem;
 }
 
 .ripple-card:hover {
@@ -189,12 +190,12 @@ h1, h2, h3 {
 
 /* ===== TYPOGRAPHY ===== */
 .ripple-heading {
-  font-family: "Fraunces", serif;
-  font-weight: 700;
+  font-family: "Lora", serif;
+  font-weight: 600;
   color: var(--violet);
   text-align: center;
-  font-size: clamp(1.4rem, 2vw, 1.9rem);
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.42rem, 1.95vw, 1.9rem);
+  margin-bottom: 0.85rem;
 }
 
 .ripple-text {
@@ -317,7 +318,7 @@ h1, h2, h3 {
 .menu-card {
   max-width: 980px;
   margin: 0 auto;
-  padding: 2.1rem 1.9rem;
+  padding: 2.3rem 2.1rem;
 }
 
 .three-col-grid {
@@ -672,7 +673,7 @@ h1, h2, h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.18rem 0.5rem;
+    gap: 0.16rem 0.46rem;
     width: 100%;
     margin-left: 0;
     padding-top: 0.08rem;
@@ -751,7 +752,7 @@ h1, h2, h3 {
 
   .nav-links {
     justify-content: center;
-    gap: 0.12rem 0.38rem;
+    gap: 0.1rem 0.34rem;
   }
 
   .nav-links a {
