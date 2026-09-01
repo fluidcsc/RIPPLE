@@ -39,12 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
 window.initFaqAccordion = function () {
   const faqItems = document.querySelectorAll(".faq-item");
 
-  faqItems.forEach(item => {
+  faqItems.forEach((item, index) => {
     const question = item.querySelector(".faq-question");
-    if (!question) return;
+    const answer = item.querySelector(".faq-answer");
+    if (!question || !answer) return;
+
+    const answerId = `faq-answer-${index + 1}`;
+    const questionId = `faq-question-${index + 1}`;
+
+    question.id = questionId;
+    answer.id = answerId;
+    question.setAttribute("aria-expanded", item.classList.contains("active") ? "true" : "false");
+    question.setAttribute("aria-controls", answerId);
+    answer.setAttribute("aria-labelledby", questionId);
+    answer.hidden = !item.classList.contains("active");
 
     question.addEventListener("click", () => {
-      item.classList.toggle("active");
+      const isOpen = item.classList.toggle("active");
+      question.setAttribute("aria-expanded", String(isOpen));
+      answer.hidden = !isOpen;
     });
   });
 };
