@@ -642,6 +642,22 @@ h1, h2, h3 {
   border: none;
 }
 
+.form-status {
+  min-height: 1.5rem;
+  margin: 0.5rem 0 0.25rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.96rem;
+}
+
+.form-status.success {
+  color: var(--green);
+}
+
+.form-status.error {
+  color: var(--terracotta);
+}
+
 /* ===========================
    FOOTER BASE
    =========================== */
