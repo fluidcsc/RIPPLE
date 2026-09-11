@@ -644,10 +644,12 @@ h1, h2, h3 {
 
 .form-status {
   min-height: 1.5rem;
-  margin: 0.5rem 0 0.25rem;
+  margin: 0.25rem 0 0;
   text-align: center;
   font-weight: 700;
   font-size: 0.96rem;
+  color: var(--green);
+  width: 100%;
 }
 
 .form-status.success {
