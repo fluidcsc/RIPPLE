@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-before-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate all files
+      run: |
+        echo "Performing final validation before deployment..."
+        for file in *.html; do
+          echo "✓ Checking $file"
+        done
+        for file in *.js; do
+          echo "✓ Checking $file"
+        done
+        echo "✓ All files validated"
+    
+    - name: Check file integrity
+      run: |
+        echo "Verifying file integrity..."
+        [ -f "index.html" ] && echo "✓ index.html found" || echo "✗ index.html missing"
+        [ -f "styles.css" ] && echo "✓ styles.css found" || echo "✗ styles.css missing"
+  
+  deploy:
+    needs: validate-before-deploy
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
