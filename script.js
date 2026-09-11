@@ -70,7 +70,7 @@ window.setSmartEmailLink = function () {
   const emailLink = document.getElementById("smartEmailLink");
   if (!emailLink) return;
 
-  const email = "admin@mortice.uk";
+  const email = "hello@ripplegrovecoffee.uk";
 
   const ua = navigator.userAgent.toLowerCase();
   const isChrome = ua.includes("chrome") && !ua.includes("edg");

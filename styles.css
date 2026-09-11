@@ -658,6 +658,7 @@ h1, h2, h3 {
 .footer-bottom {
   margin-top: 1rem;
   color: #E9E0D2;
+  text-align: center;
 }
 
 .footer-bottom p {
