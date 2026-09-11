@@ -1,0 +1,38 @@
+name: Check Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check for broken links in HTML
+      run: |
+        echo "Checking for common broken link patterns..."
+        for file in *.html; do
+          echo "Checking $file..."
+          grep -o 'href="[^"]*"' "$file" | grep -o '"[^"]*"' | sed 's/"//g' > /tmp/links_$$.txt
+          while IFS= read -r link; do
+            if [[ $link == http* ]] && ! [[ $link == *github.com* ]] && ! [[ $link == *ripple* ]]; then
+              echo "  Found external link: $link"
+            fi
+            if [[ $link == ./* ]] || [[ $link == ../* ]]; then
+              if [ ! -f "${link}" ] && [ ! -d "${link}" ]; then
+                echo "  ⚠️  Potential broken link: $link"
+              fi
+            fi
+          done < /tmp/links_$$.txt
+        done || true
+    
+    - name: Validate link syntax
+      run: |
+        echo "Checking for malformed links..."
+        grep -n 'href=""' *.html && echo "⚠️  Found empty href attributes" || echo "No empty href found (good!)"
+        grep -n 'href=' *.html | grep -v 'href="' | grep -v "href='" && echo "⚠️  Found unquoted href attributes" || echo "All hrefs properly quoted (good!)"

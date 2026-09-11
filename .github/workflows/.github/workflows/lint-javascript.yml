@@ -1,0 +1,49 @@
+name: Lint JavaScript
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install ESLint
+      run: npm install -g eslint
+    
+    - name: Create ESLint config
+      run: |
+        echo '{
+          "env": {
+            "browser": true,
+            "es2021": true
+          },
+          "extends": "eslint:recommended",
+          "rules": {
+            "no-unused-vars": "warn",
+            "no-undef": "warn",
+            "semi": ["warn", "always"]
+          }
+        }' > .eslintrc.json
+    
+    - name: Lint JavaScript files
+      run: |
+        for file in *.js; do
+          echo "Linting $file..."
+          eslint "$file" || true
+        done
+    
+    - name: Check for console.log statements
+      run: |
+        echo "Checking for console.log statements..."
+        grep -n "console.log" *.js || echo "No console.log found (good!)"
