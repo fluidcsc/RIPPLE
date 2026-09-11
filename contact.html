@@ -18,9 +18,10 @@
 
     <div class="one-col-grid">
 
-      <form id="contactForm" class="ripple-card contact-form" 
-            action="https://formspree.io/f/mgaeqdvr" 
-            method="POST">
+      <form class="ripple-card contact-form" 
+            action="mailto:hello@ripplegrovecoffee.uk" 
+            method="post" 
+            enctype="text/plain">
 
       <div class="ripple-copy">
         <h2 class="eyebrow">Contact Us</h2>
@@ -29,22 +30,21 @@
 
         <div class="form-group">
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" required>
+          <input id="name" type="text" required>
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
+          <input id="email" type="email" required>
         </div>
 
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" rows="5" required></textarea>
         </div>
 
         <div class="form-cta">
-          <button class="ripple-btn" type="submit">Send Message</button>
-          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <button class="ripple-btn">Send Message</button>
         </div>
 
       </form>
@@ -68,47 +68,6 @@
         setSmartEmailLink();
       }
     });
-
-  const contactForm = document.getElementById("contactForm");
-  const formStatus = document.getElementById("form-status");
-
-  if (contactForm && formStatus) {
-    contactForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      const submitButton = contactForm.querySelector("button[type='submit']");
-      const originalText = submitButton.textContent;
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-      formStatus.textContent = "";
-      formStatus.classList.remove("success", "error");
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: new FormData(contactForm),
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          formStatus.textContent = "Thanks! Your message has been sent.";
-          formStatus.classList.add("success");
-          contactForm.reset();
-        } else {
-          throw new Error("Submission failed");
-        }
-      } catch (error) {
-        formStatus.textContent = "There was a problem sending your message. Please email hello@ripplegrovecoffee.uk directly.";
-        formStatus.classList.add("error");
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      }
-    });
-  }
 </script>
 
 <script src="script.js"></script>
