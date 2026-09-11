@@ -648,8 +648,8 @@ h1, h2, h3 {
 .footer {
   background: transparent;
   color: #E9E0D2; 
-  padding: 2rem 0;
-  margin-top: 4rem;
+  padding: 1rem 0 0.75rem;
+  margin-top: 1.8rem;
   text-align: center;
 }
 
@@ -660,7 +660,7 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 0.7rem;
 }
 
 .footer-brand {
@@ -670,7 +670,7 @@ h1, h2, h3 {
 
 .footer-bottom {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.1rem;
   color: #E9E0D2;
   text-align: center;
   max-width: none;
