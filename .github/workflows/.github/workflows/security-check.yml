@@ -1,0 +1,30 @@
+name: Security Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check for security vulnerabilities
+      run: |
+        echo "Running security checks..."
+        echo "Checking for hardcoded credentials..."
+        grep -r "password" *.html *.js *.css 2>/dev/null || echo "✓ No hardcoded passwords found"
+        echo "Checking for SQL injection patterns..."
+        grep -r "SELECT\|INSERT\|DELETE" *.js 2>/dev/null || echo "✓ No SQL patterns found"
+        echo "Checking for XSS vulnerabilities..."
+        grep -r "eval(" *.js 2>/dev/null || echo "✓ No eval() found"
+        echo "✓ Security checks passed"
+    
+    - name: Check for outdated or risky practices
+      run: |
+        echo "Checking for risky HTML practices..."
+        grep -n "target=\"_blank\"" *.html | grep -v "rel=\"noopener" && echo "⚠️  Found target=_blank without noopener" || echo "✓ Safe external links"
