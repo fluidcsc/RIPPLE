@@ -641,7 +641,7 @@ h1, h2, h3 {
 .footer {
   background: transparent;
   color: #E9E0D2; 
-  padding: 2rem 0;
+  padding: 1.5rem 0 1rem;
   margin-top: 4rem;
   text-align: center;
 }
@@ -652,19 +652,26 @@ h1, h2, h3 {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-bottom {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   color: #E9E0D2;
   text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-bottom p {
   font-size: 0.75rem;
   opacity: 0.75;
   text-align: center;
+  width: 100%;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* ===========================
