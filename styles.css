@@ -284,6 +284,13 @@ h1, h2, h3 {
   color: var(--brown);
 }
 
+.footer-bottom.ripple-text {
+  max-width: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .ripple-text strong {
   color: var(--violet);
   font-weight: 700;
@@ -666,11 +673,14 @@ h1, h2, h3 {
   margin-top: 1rem;
   color: #E9E0D2;
   text-align: center;
+  max-width: none;
 }
 
 .footer-bottom p {
-  width: 100%;
+  width: auto;
+  max-width: none;
   margin: 0 auto;
+  display: inline-block;
   font-size: 0.75rem;
   line-height: 1.5;
   letter-spacing: 0.02em;
