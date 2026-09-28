@@ -146,6 +146,17 @@ h1, h2, h3 {
   will-change: transform, color, opacity;
 }
 
+.nav-brand img {
+  width: 150px;
+  height: auto;
+}
+
+.hero-logo {
+  width: min(280px, 80%);
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
 /* ============================
    DESKTOP LINKS
    ============================ */
