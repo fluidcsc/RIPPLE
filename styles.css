@@ -147,14 +147,27 @@ h1, h2, h3 {
 }
 
 .nav-brand img {
-  width: 150px;
-  height: auto;
+  width: 210px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-logo {
-  width: min(280px, 80%);
+  width: min(132px, 72%);
   height: auto;
   margin: 0 auto 1.5rem;
+}
+
+.menu-hero-logo,
+.events-hero-logo,
+.visit-hero-logo,
+.faqs-hero-logo,
+.contact-hero-logo,
+.membership-hero-logo {
+  width: min(132px, 38vw);
+  height: auto;
+  margin: 0 auto;
 }
 
 /* ============================
@@ -196,23 +209,6 @@ h1, h2, h3 {
   color: var(--terracotta);
   background: rgba(77, 111, 57, 0.05);
   opacity: 1;
-}
-
-.skip-link {
-  position: absolute;
-  left: 1rem;
-  top: -3rem;
-  background: var(--brown);
-  color: var(--cream);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  z-index: 1000;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 1rem;
 }
 
 :focus-visible {
@@ -856,6 +852,12 @@ h1, h2, h3 {
     flex: 0 0 auto;
   }
 
+  .nav-brand img {
+    width: 175px;
+    height: 54px;
+    margin: 0 auto;
+  }
+
   .nav-links {
     display: flex;
     flex-wrap: wrap;
@@ -884,7 +886,7 @@ h1, h2, h3 {
   }
 
   .page-section {
-    padding-top: 108px;
+    padding-top: 132px;
   }
 
   .ripple-card {
